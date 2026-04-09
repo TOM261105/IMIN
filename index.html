@@ -474,7 +474,7 @@
 
 .failure-text .bracket-title {
     display: inline-block;
-    border: .5px solid rgba(255,255,255,.5);
+    border: .5px solid rgba(255,255,255,0);
     padding: 14px 20px;
     margin-bottom: 28px;
     position: relative;
@@ -567,7 +567,7 @@
   }
 
   .importance-box {
-    border: 2px solid var(--blue-mid);
+    border: solid rgba(255,255,255,0);
     padding: 20px 24px;
     margin-bottom: 28px;
     position: relative;
@@ -578,13 +578,13 @@
   .importance-box::after {
     content: '';
     position: absolute;
-    width: 12px; height: 12px;
+    width: 25px; height: 75px;
     border-color: var(--blue-mid);
     border-style: solid;
   }
 
-  .importance-box::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
-  .importance-box::after  { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
+  .importance-box::before { top: -2px; left: -2px; border-width: 3px 3px 0 3px; }
+  .importance-box::after  { bottom: -2px; right: -2px; border-width: 3px 3px 3px 0; }
 
   .importance-box p {
     font-size: 11px;
