@@ -3,100 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viviendo ERC, IMIN</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Información sobre los Riñones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .hero {
+            background: url('hero-image.jpg') no-repeat center; /* Placeholder for hero image */
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .section {
+            padding: 20px;
+        }
+        .kidney-info {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .functions, .diseases, .footer {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .wavy {
+            background: url('wavy-design.svg') repeat-x; /* Placeholder for wavy design */
+            height: 50px;
+        }
+    </style>
 </head>
-
 <body>
-
-<!-- 🔹 NAVBAR -->
-<header class="navbar">
-    <h1 class="logo">Viviendo ERC</h1>
-    <h1 class="logo">IMIN</h2>
-    <nav>
-        <ul class="menu">
-            <li><a href="#sobre">Quiénes somos</a></li>
-            <li><a href="#rinones">Riñones</a></li>
-            <li><a href="#funciones">Funciones</a></li>
-            <li><a href="#fallo">Enfermedad</a></li>
-            <li><a href="#importancia">Importancia</a></li>
-        </ul>
-    </nav>
-</header>
-
-<!-- 🔹 HERO -->
-<section class="hero">
-    <div class="hero-content">
-        <h2>Entender lo que pasa en tu cuerpo cambia tu historia</h2>
-        <p>Aprende, previene y acompaña tu proceso con información clara sobre la enfermedad renal crónica.</p>
-        <a href="#" class="btn">Conoce tu etapa</a>
+    <div class="hero">
+        <h1>Información sobre los Riñones</h1>
+        <img src="logo.png" alt="Logo Placeholder" />
     </div>
-</section>
-
-<!-- 🔹 SOBRE -->
-<section id="sobre" class="section">
-    <h2>¿Qué es Viviendo ERC?</h2>
-    <p>
-        Es un espacio informativo diseñado para orientar a pacientes, familias y personas interesadas
-        en la enfermedad renal crónica. Nuestro objetivo es brindar conocimiento claro, accesible y útil.
-    </p>
-</section>
-
-<!-- 🔹 MISIÓN / VISIÓN -->
-<section class="section grid">
-    <div class="card">
-        <h3>Misión</h3>
-        <p>Brindar información clara y acompañamiento a personas con enfermedad renal.</p>
+    <div class="section kidney-info">
+        <img src="kidney-image.jpg" alt="Placeholder for Kidney Image" />
+        <p>Los riñones son órganos vitales que ayudan a filtrar desechos y mantener el equilibrio de líquidos...</p>
     </div>
-
-    <div class="card">
-        <h3>Visión</h3>
-        <p>Ser un referente confiable en educación y prevención de la ERC.</p>
+    <div class="wave wavy"></div>
+    <div class="section functions">
+        <h2>Funciones de los Riñones</h2>
+        <img src="kidney-function1.jpg" alt="Placeholder for Kidney Function Image" />
+        <img src="urinary-system.jpg" alt="Placeholder for Urinary System Image" />
     </div>
-</section>
-
-<!-- 🔹 RIÑONES -->
-<section id="rinones" class="section">
-    <h2>¿Qué son los riñones?</h2>
-    <p>
-        Son órganos esenciales que filtran la sangre, eliminan desechos y mantienen el equilibrio del cuerpo.
-    </p>
-</section>
-
-<!-- 🔹 FUNCIONES -->
-<section id="funciones" class="section">
-    <h2>Funciones de los riñones</h2>
-    <ul>
-        <li>Filtrar desechos</li>
-        <li>Regular líquidos</li>
-        <li>Controlar presión arterial</li>
-        <li>Producir hormonas</li>
-    </ul>
-</section>
-
-<!-- 🔹 FALLA RENAL -->
-<section id="fallo" class="section highlight">
-    <h2>¿Qué pasa cuando dejan de funcionar?</h2>
-    <p>
-        El cuerpo comienza a acumular toxinas, lo que puede provocar complicaciones graves
-        y afectar múltiples órganos.
-    </p>
-</section>
-
-<!-- 🔹 IMPORTANCIA -->
-<section id="importancia" class="section">
-    <h2>¿Por qué es importante entenderlo?</h2>
-    <ul>
-        <li>Mejor calidad de vida</li>
-        <li>Detección temprana</li>
-        <li>Tratamiento oportuno</li>
-    </ul>
-</section>
-
-<!-- 🔹 FOOTER -->
-<footer class="footer">
-    <p>© 2026 Viviendo ERC | Educación en salud renal</p>
-</footer>
-
+    <div class="wave wavy"></div>
+    <div class="section diseases">
+        <h2>Enfermedades Relacionadas</h2>
+        <p>Los riñones pueden verse afectados por diversas enfermedades...</p>
+    </div>
+    <div class="wave wavy"></div>
+    <div class="section footer">
+        <p>© 2026 Información sobre los riñones. Todos los derechos reservados.</p>
+    </div>
 </body>
 </html>
