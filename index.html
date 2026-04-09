@@ -1,108 +1,896 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kidney Information</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        header {
-            background: #f8f9fa;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #007bff;
-        }
-        .hero {
-            background: url('hero-image.jpg') no-repeat center center/cover;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-        .content {
-            padding: 20px;
-            background: #fff;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .section {
-            padding: 30px;
-            background: #e9ecef;
-            border-radius: 8px;
-            position: relative;
-        }
-        .section::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 100%;
-            width: 100%;
-            height: 20px;
-            background: white;
-            clip-path: polygon(0 100%, 50% 50%, 100% 100%);
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #f8f9fa;
-            position: relative;
-        }
-        @media (max-width: 768px) {
-            .hero {
-                height: 300px;
-            }
-            .content {
-                padding: 10px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIVIENDO ERC – IMIN</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700;1,800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue-dark:   #0b3d6e;
+    --blue-mid:    #1a6bb5;
+    --blue-light:  #4aa3d9;
+    --blue-bg:     #ddeef8;
+    --blue-card:   #3a76b4;
+    --blue-section:#2a6baa;
+    --teal:        #2e8bc0;
+    --white:       #ffffff;
+    --text-dark:   #1c3a5e;
+    --text-body:   #2c4a6e;
+    --text-muted:  #4d7aa3;
+    --accent:      #f0a500;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Open Sans', sans-serif; color: var(--text-body); background: #fff; overflow-x: hidden; }
+
+  /* ─── HERO ─────────────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 480px;
+    background: linear-gradient(135deg, #0b3d6e 0%, #1a6bb5 40%, #4aa3d9 75%, #84cde8 100%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Noise/grain overlay for depth */
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  /* Kidney image right side – replaced with CSS gradient blob */
+  .hero-kidney-bg {
+    position: absolute;
+    right: -40px; top: -40px;
+    width: 60%;
+    height: 120%;
+    background: radial-gradient(ellipse at 60% 40%, rgba(134,198,230,0.55) 0%, rgba(74,163,217,0.3) 40%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-kidney-bg::after {
+    content: '';
+    position: absolute;
+    right: 40px; top: 20px;
+    width: 480px; height: 420px;
+    background: url('https://images.unsplash.com/photo-1578496780896-7282a8a2b36f?w=900&auto=format&fit=crop&q=60') center/cover no-repeat;
+    border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
+    opacity: 0.55;
+    mix-blend-mode: luminosity;
+  }
+
+  .hero-top {
+    display: flex;
+    align-items: center;
+    padding: 28px 60px 0;
+    position: relative; z-index: 2;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 56px; height: 56px;
+    background: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+
+  .logo-icon svg { width: 38px; height: 38px; }
+
+  .logo-text { line-height: 1.1; }
+  .logo-text .brand { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 1px; }
+  .logo-text .brand span { font-weight: 400; }
+  .logo-text .sub { font-size: 10px; letter-spacing: 3px; opacity: 0.8; }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 50px 60px 60px;
+    max-width: 580px;
+  }
+
+  .hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .hero-content h1 .line1 { font-size: clamp(22px, 2.8vw, 36px); font-weight: 600; display: block; }
+  .hero-content h1 .line2 { font-size: clamp(28px, 3.8vw, 52px); font-weight: 800; font-style: italic; display: block; }
+
+  .hero-tagline {
+    display: inline-block;
+    border: 1.5px solid rgba(255,255,255,0.7);
+    border-radius: 4px;
+    padding: 12px 20px;
+    color: white;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 32px;
+    max-width: 340px;
+  }
+
+  .hero-tagline strong { display: block; font-weight: 700; }
+
+  .btn-primary {
+    display: inline-block;
+    background: white;
+    color: var(--blue-dark);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+    letter-spacing: 0.5px;
+    border: none; cursor: pointer;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+
+  /* ─── NAV ───────────────────────────────────────────────────── */
+  nav {
+    background: var(--blue-dark);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    position: sticky; top: 0; z-index: 100;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    padding: 14px 18px;
+    border-right: 1px solid rgba(255,255,255,0.15);
+    text-transform: uppercase;
+    transition: background .15s;
+    text-align: center;
+  }
+
+  nav a:last-child { border-right: none; }
+  nav a:hover { background: rgba(255,255,255,0.12); }
+
+  /* ─── INTRO STRIP ───────────────────────────────────────────── */
+  .intro-strip {
+    text-align: center;
+    padding: 36px 40px 28px;
+    border-bottom: 1px solid #d0e6f5;
+  }
+
+  .intro-strip .tagline1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .intro-strip .tagline1 strong { color: var(--blue-mid); }
+
+  .intro-strip .tagline2 {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  /* ─── ABOUT ─────────────────────────────────────────────────── */
+  .about {
+    padding: 56px 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .about p { font-size: 15px; line-height: 1.8; margin-bottom: 18px; color: var(--text-body); }
+  .about p strong { color: var(--blue-dark); font-weight: 700; }
+  .about p em { color: var(--blue-mid); font-style: normal; font-weight: 600; }
+
+  /* ─── MISSION / VISION ──────────────────────────────────────── */
+  .mv-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0 60px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .mv-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 0 12px;
+  }
+
+  .mv-card .mv-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(26px, 3vw, 42px);
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255,255,255,0.18);
+    text-align: center;
+    letter-spacing: 3px;
+    padding: 16px 0 0;
+    position: relative; z-index: 2;
+    background: var(--blue-card);
+  }
+
+  .mv-card .mv-body {
+    background: var(--blue-card);
+    padding: 20px 28px 0;
+    position: relative; z-index: 2;
+  }
+
+  .mv-card .mv-body p {
+    color: rgba(255,255,255,0.92);
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+
+  .mv-wave {
+    display: block;
+    width: 100%;
+    margin-top: -2px;
+  }
+
+  /* ─── QUOTE SECTION ─────────────────────────────────────────── */
+  .quote-section {
+    background: linear-gradient(160deg, #e8f3fb 0%, #cce4f5 50%, #b5d5ee 100%);
+    padding: 70px 80px 60px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+  }
+
+  .quote-section::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 0;
+    width: 55%;
+    height: 100%;
+    background: radial-gradient(ellipse at 70% 50%, rgba(200,225,245,0.8) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .quote-blob {
+    position: absolute;
+    right: -20px; top: -40px;
+    width: 480px; height: 400px;
+    background: radial-gradient(ellipse, rgba(160,210,240,0.6) 0%, rgba(120,185,225,0.3) 40%, transparent 70%);
+    border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+    pointer-events: none; z-index: 0;
+  }
+
+  .quote-text {
+    flex: 1;
+    position: relative; z-index: 1;
+  }
+
+  .quote-text blockquote {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--blue-dark);
+    line-height: 1.35;
+    margin-bottom: 28px;
+  }
+
+  .quote-text blockquote .q1 { font-size: clamp(18px, 2.2vw, 26px); font-weight: 600; display: block; }
+  .quote-text blockquote .q2 { font-size: clamp(16px, 1.9vw, 23px); font-weight: 600; font-style: italic; display: block; }
+  .quote-text blockquote .q3 { font-size: clamp(20px, 2.5vw, 32px); font-weight: 800; font-style: italic; display: block; color: var(--blue-mid); }
+
+  .btn-outline-bracket {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid var(--blue-mid);
+    color: var(--blue-dark);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 2px;
+    position: relative;
+    transition: all .2s;
+    cursor: pointer; background: transparent;
+  }
+
+  .btn-outline-bracket::before,
+  .btn-outline-bracket::after {
+    content: '';
+    position: absolute;
+    width: 10px; height: 10px;
+    border-color: var(--blue-mid);
+    border-style: solid;
+  }
+
+  .btn-outline-bracket::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
+  .btn-outline-bracket::after  { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
+
+  .btn-outline-bracket:hover { background: var(--blue-mid); color: white; }
+
+  /* ─── KIDNEY ANATOMY ────────────────────────────────────────── */
+  .anatomy {
+    background: #f4f9fd;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 0;
+    min-height: 440px;
+  }
+
+  .anatomy-img {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    padding: 40px;
+    min-height: 380px;
+  }
+
+  /* Skeleton background hint */
+  .anatomy-img::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, #e8f3fb 0%, #f4f9fd 100%);
+  }
+
+  .anatomy-img-inner {
+    position: relative; z-index: 1;
+    width: 260px; height: 280px;
+    background: url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&auto=format&fit=crop&q=60') center/cover no-repeat;
+    border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
+    filter: saturate(0.9);
+  }
+
+  .anatomy-text {
+    padding: 50px 60px 50px 40px;
+  }
+
+  .anatomy-text p {
+    font-size: 14.5px;
+    line-height: 1.85;
+    color: var(--text-body);
+    margin-bottom: 16px;
+    text-align: justify;
+  }
+
+  .anatomy-cta-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+
+  /* ─── FUNCTIONS ─────────────────────────────────────────────── */
+  .functions-section {
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: start;
+  }
+
+  .functions-img {
+    min-height: 480px;
+    background: url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=700&auto=format&fit=crop&q=60') center/cover no-repeat;
+    position: relative;
+  }
+
+  .functions-img::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, transparent 60%, white 100%);
+  }
+
+  .functions-text {
+    padding: 50px 60px 50px 40px;
+  }
+
+  .section-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 800;
+    font-style: italic;
+    color: var(--blue-light);
+    margin-bottom: 24px;
+    opacity: 0.7;
+  }
+
+  .function-item {
+    margin-bottom: 20px;
+  }
+
+  .function-item h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--blue-dark);
+    margin-bottom: 4px;
+  }
+
+  .function-item p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--text-body);
+  }
+
+  .function-item .note {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .function-item .note::before {
+    content: '👉';
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ─── FAILURE SECTION ───────────────────────────────────────── */
+  .failure-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 380px;
+  }
+
+  .failure-text {
+    background: var(--blue-section);
+    padding: 50px 50px 0 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .failure-text::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -20px;
+    width: 120%;
+    height: 120px;
+    background: var(--blue-section);
+    border-radius: 50% 50% 0 0;
+    transform: scaleX(1.1);
+  }
+
+  .failure-text .bracket-title {
+    display: inline-block;
+    border: 2px solid rgba(255,255,255,0.7);
+    padding: 14px 20px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+
+  .failure-text .bracket-title::before,
+  .failure-text .bracket-title::after {
+    content: '';
+    position: absolute;
+    width: 12px; height: 12px;
+    border-color: rgba(255,255,255,0.9);
+    border-style: solid;
+  }
+
+  .failure-text .bracket-title::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
+  .failure-text .bracket-title::after  { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
+
+  .failure-text .bracket-title p { font-size: 12px; color: rgba(255,255,255,0.7); margin-bottom: 2px; }
+  .failure-text .bracket-title strong {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800; font-size: 17px;
+    color: white; display: block;
+  }
+
+  .failure-text p { color: rgba(255,255,255,0.88); font-size: 13.5px; line-height: 1.7; margin-bottom: 12px; }
+  .failure-text p strong { color: white; }
+  .failure-text ul { padding-left: 0; list-style: none; margin-bottom: 14px; }
+  .failure-text ul li {
+    color: rgba(255,255,255,0.88);
+    font-size: 13.5px;
+    padding: 3px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+  .failure-text ul li::before {
+    content: attr(data-letter) '.';
+    position: absolute; left: 0;
+    font-weight: 700; color: white;
+  }
+
+  .failure-img {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .failure-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.85);
+  }
+
+  /* Diagonal wave overlay */
+  .failure-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 60px;
+    background: white;
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+
+  /* ─── IMPORTANCE / FINAL ────────────────────────────────────── */
+  .importance-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 440px;
+    background: #f0f7fd;
+  }
+
+  .importance-kidney {
+    background: #1a1a2e;
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .importance-kidney img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    filter: saturate(0.7) contrast(1.1);
+  }
+
+  .importance-content {
+    padding: 60px 60px 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .importance-box {
+    border: 2px solid var(--blue-mid);
+    padding: 20px 24px;
+    margin-bottom: 28px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .importance-box::before,
+  .importance-box::after {
+    content: '';
+    position: absolute;
+    width: 12px; height: 12px;
+    border-color: var(--blue-mid);
+    border-style: solid;
+  }
+
+  .importance-box::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
+  .importance-box::after  { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
+
+  .importance-box p {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 2px;
+  }
+
+  .importance-box strong {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--blue-dark);
+    display: block;
+    letter-spacing: 0.5px;
+  }
+
+  .importance-content > p {
+    font-size: 14px;
+    color: var(--text-body);
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+
+  .importance-content ol {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .importance-content ol li {
+    padding: 6px 0 6px 32px;
+    position: relative;
+    font-size: 14px;
+    color: var(--text-body);
+    border-bottom: 1px solid rgba(26,107,181,0.1);
+  }
+
+  .importance-content ol li:last-child { border-bottom: none; }
+
+  .importance-content ol li::before {
+    content: counter(li-counter) '.';
+    counter-increment: li-counter;
+    position: absolute; left: 0;
+    font-weight: 700;
+    color: var(--blue-mid);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .importance-content ol { counter-reset: li-counter; }
+
+  /* ─── SCROLL ANIMATIONS ─────────────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ─── RESPONSIVE ────────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .hero-content { padding: 30px; }
+    .hero-kidney-bg::after { display: none; }
+    nav { display: none; }
+    .about { padding: 36px 24px; }
+    .mv-section { grid-template-columns: 1fr; padding: 0 20px 40px; }
+    .mv-card { margin: 0 0 16px; }
+    .quote-section { padding: 40px 24px; flex-direction: column; }
+    .anatomy, .functions-section, .failure-section, .importance-section { grid-template-columns: 1fr; }
+    .anatomy-text, .functions-text { padding: 30px 24px; }
+    .failure-text { padding: 36px 24px 60px; }
+    .importance-content { padding: 36px 24px; }
+    .failure-img, .importance-kidney { min-height: 220px; }
+    .failure-img img, .importance-kidney img { position: absolute; inset: 0; }
+    .failure-img, .importance-kidney { position: relative; }
+  }
+</style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Kidney Health</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
-    <div class="hero">
-        <h1>Understanding Your Kidneys</h1>
+
+<!-- ═══ HERO ═══════════════════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-kidney-bg"></div>
+
+  <div class="hero-top">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 8C14 8 10 14 10 20C10 28 16 34 24 38C32 34 38 28 38 20C38 14 34 8 28 8" stroke="#1a6bb5" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M24 38C20 32 16 26 18 20C20 14 24 12 24 12C24 12 28 14 30 20C32 26 28 32 24 38Z" fill="#4aa3d9" opacity="0.6"/>
+          <circle cx="20" cy="20" r="5" fill="#1a6bb5" opacity="0.7"/>
+          <circle cx="28" cy="20" r="5" fill="#7ec8e3" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <div class="brand">VIVIENDO <span>ERC</span></div>
+        <div class="sub">IMIN</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="hero-content">
+    <h1>
+      <span class="line1">Entender lo que pasa en tu cuerpo</span>
+      <span class="line2">cambia tu historia</span>
+    </h1>
+    <div class="hero-tagline">
+      Acompañamos cada etapa de la
+      <strong>Enfermedad Renal Crónica</strong>
     </div>
-    <div class="content">
-        <div class="section">
-            <h2>What are Kidneys?</h2>
-            <p>The kidneys are two bean-shaped organs located on either side of the spine...</p>
-            <img src="kidney-image.jpg" alt="Kidney Image" style="width:100%; height:auto;">
-        </div>
-        <div class="section">
-            <h2>Kidney Function</h2>
-            <p>The kidneys filter waste from the blood and produce urine...</p>
-        </div>
-        <div class="section">
-            <h2>Common Kidney Diseases</h2>
-            <p>There are several diseases that can affect kidney function...</p>
-        </div>
-        <div class="section">
-            <h2>Healthy Kidney Tips</h2>
-            <p>Maintaining kidney health is essential for overall health...</p>
-        </div>
+    <a href="#" class="btn-primary">Conoce tu etapa</a>
+  </div>
+</header>
+
+<!-- ═══ NAV ════════════════════════════════════════════════════ -->
+<nav>
+  <a href="#">Quienes somos</a>
+  <a href="#">Riñones</a>
+  <a href="#">Enfermedad<br>Renal Crónica</a>
+  <a href="#">Riesgo</a>
+  <a href="#">Prevención</a>
+  <a href="#">Detección temprana</a>
+  <a href="#">Vivir con Enfermedad<br>Renal Crónica</a>
+  <a href="#">Contacto</a>
+</nav>
+
+<!-- ═══ INTRO STRIP ════════════════════════════════════════════ -->
+<div class="intro-strip reveal">
+  <p class="tagline1"><strong>VIVIENDO ERC</strong> es una plataforma educativa y de acompañamiento para entender, cuidar y vivir mejor con Enfermedad Renal Crónica</p>
+  <p class="tagline2">Aquí encontrarás información clara y una comunidad que te acompaña en cada paso.</p>
+</div>
+
+<!-- ═══ ABOUT ══════════════════════════════════════════════════ -->
+<section class="about reveal">
+  <p><strong>VIVIENDO ERC</strong> es una plataforma de acompañamiento y educación creada por <strong>IMIN</strong>, diseñada para guiar a pacientes, familiares y profesionales de la salud a lo largo de cada etapa de la <em>Enfermedad Renal Crónica</em>.</p>
+  <p>Creemos que entender lo que sucede en el cuerpo transforma la manera en que se vive la enfermedad. Por eso, desarrollamos contenido claro, accesible y humano que ayuda a tomar decisiones informadas, reducir la incertidumbre y fortalecer el proceso de cuidado.</p>
+  <p>A través de información confiable, historias reales y herramientas prácticas, acompañamos a las personas desde la prevención, pasando por la diálisis, hasta el trasplante, generando una red de apoyo donde nadie tenga que vivir este proceso solo.</p>
+</section>
+
+<!-- ═══ MISIÓN / VISIÓN ════════════════════════════════════════ -->
+<div class="mv-section reveal">
+  <div class="mv-card">
+    <div class="mv-label">MISIÓN</div>
+    <div class="mv-body">
+      <p>Brindar información clara, confiable y accesible sobre la Enfermedad Renal Crónica para acompañar a pacientes y sus familias en cada etapa del proceso, ayudándoles a comprender su condición, tomar decisiones informadas y vivir con mayor tranquilidad, control y calidad de vida.</p>
     </div>
-    <footer>
-        <p>&copy; 2026 Kidney Health. All Rights Reserved.</p>
-    </footer>
+    <svg class="mv-wave" viewBox="0 0 400 60" preserveAspectRatio="none">
+      <path d="M0,0 Q100,60 200,30 Q300,0 400,40 L400,60 L0,60 Z" fill="#2e5f9a" opacity="0.5"/>
+      <path d="M0,20 Q120,60 250,20 Q320,0 400,30 L400,60 L0,60 Z" fill="#1a4a80" opacity="0.4"/>
+    </svg>
+  </div>
+  <div class="mv-card">
+    <div class="mv-label">VISIÓN</div>
+    <div class="mv-body">
+      <p>Ser una plataforma referente en educación y acompañamiento en Enfermedad Renal Crónica en habla hispana, reconocida por su enfoque humano, su claridad médica y su capacidad de transformar la experiencia del paciente a través del conocimiento, la empatía y la comunidad.</p>
+    </div>
+    <svg class="mv-wave" viewBox="0 0 400 60" preserveAspectRatio="none">
+      <path d="M0,0 Q100,60 200,30 Q300,0 400,40 L400,60 L0,60 Z" fill="#2e5f9a" opacity="0.5"/>
+      <path d="M0,20 Q120,60 250,20 Q320,0 400,30 L400,60 L0,60 Z" fill="#1a4a80" opacity="0.4"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ═══ QUOTE SECTION ══════════════════════════════════════════ -->
+<section class="quote-section reveal">
+  <div class="quote-blob"></div>
+  <div class="quote-text">
+    <blockquote>
+      <span class="q1">"Los riñones trabajan en silencio,</span>
+      <span class="q2">pero su función</span>
+      <span class="q3">es vital para todo el cuerpo"</span>
+    </blockquote>
+    <button class="btn-outline-bracket">¿Qué son los riñones?</button>
+  </div>
+</section>
+
+<!-- ═══ ANATOMY ════════════════════════════════════════════════ -->
+<section class="anatomy">
+  <div class="anatomy-img">
+    <div class="anatomy-img-inner"></div>
+  </div>
+  <div class="anatomy-text reveal">
+    <p>Los riñones son dos órganos con forma de frijol que forman parte del sistema urinario. Cada persona normalmente tiene dos riñones, ubicados a ambos lados de la columna, en la parte baja de la espalda. Tienen un tamaño aproximado de 10–12 cm (similar al de un puño) y reciben una gran cantidad de sangre para realizar sus funciones.</p>
+    <p>Se localizan en la parte posterior del abdomen a ambos lados de la columna vertebral, justo debajo de las costillas.</p>
+    <p>El riñón derecho suele estar ligeramente más abajo que el izquierdo debido al hígado.</p>
+    <div class="anatomy-cta-row">
+      <button class="btn-outline-bracket">¿Qué hacen<br>los riñones?</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FUNCTIONS ══════════════════════════════════════════════ -->
+<section class="functions-section">
+  <div class="functions-img"></div>
+  <div class="functions-text reveal">
+    <div class="section-badge">Fósforo</div>
+    <p style="font-size:13.5px;color:#4d7aa3;margin-bottom:20px;">Estos minerales son clave para el funcionamiento del corazón, músculos y nervios. Los riñones cumplen múltiples funciones esenciales:</p>
+
+    <div class="function-item">
+      <h4>1. Filtrar toxinas de la sangre</h4>
+      <p>Eliminan productos de desecho generados por el cuerpo (como urea y creatinina) a través de la orina.</p>
+      <div class="note">Sin esta función, las toxinas se acumulan en la sangre.</div>
+    </div>
+
+    <div class="function-item">
+      <h4>2. Regular los líquidos del cuerpo</h4>
+      <p>Controlan la cantidad de agua en el organismo, evitando tanto la deshidratación como la sobrecarga de líquidos.</p>
+      <div class="note">Por eso, cuando fallan, pueden aparecer hinchazón o retención de líquidos.</div>
+    </div>
+
+    <div class="function-item">
+      <h4>3. Mantener el equilibrio de minerales</h4>
+      <p>Regulan sustancias como: Sodio, Potasio y Calcio.</p>
+    </div>
+
+    <div class="function-item">
+      <h4>4. Controlar la presión arterial</h4>
+      <p>Los riñones participan en la regulación de la presión arterial mediante sistemas hormonales.</p>
+      <div class="note">Cuando fallan, la presión arterial puede elevarse.</div>
+    </div>
+
+    <div class="function-item">
+      <h4>5. Producir hormonas</h4>
+      <p>Los riñones producen hormonas importantes como: Eritropoyetina: estimula la producción de glóbulos rojos. Vitamina D activa: necesaria para la salud ósea.</p>
+      <div class="note">Por eso, la enfermedad renal puede causar anemia y debilidad ósea.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAILURE SECTION ════════════════════════════════════════ -->
+<section class="failure-section">
+  <div class="failure-text reveal">
+    <div class="bracket-title">
+      <p>¿Qué pasa cuando</p>
+      <strong>los riñones dejan de funcionar?</strong>
+    </div>
+    <p>Cuando los riñones pierden su capacidad:</p>
+    <ul>
+      <li data-letter="A">Las toxinas se acumulan en la sangre</li>
+      <li data-letter="B">Se altera el equilibrio de líquidos</li>
+      <li data-letter="C">Se afectan los niveles de minerales</li>
+      <li data-letter="D">Puede aumentar la presión arterial</li>
+    </ul>
+    <p>Se desarrollan complicaciones como: fatiga, hinchazón, náuseas, anemia</p>
+    <p><em>En etapas avanzadas, puede ser necesario iniciar tratamientos como <strong>diálisis o trasplante</strong></em></p>
+  </div>
+  <div class="failure-img">
+    <img
+      src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&auto=format&fit=crop&q=70"
+      alt="Médico con paciente"
+      loading="lazy"
+    />
+  </div>
+</section>
+
+<!-- ═══ IMPORTANCE ═════════════════════════════════════════════ -->
+<section class="importance-section">
+  <div class="importance-kidney">
+    <img
+      src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&auto=format&fit=crop&q=70"
+      alt="Riñón"
+      loading="lazy"
+    />
+  </div>
+  <div class="importance-content reveal">
+    <div class="importance-box">
+      <p>Importancia</p>
+      <strong>PARA EL PACIENTE</strong>
+    </div>
+    <p>Entender cómo funcionan los riñones permite:</p>
+    <ol>
+      <li>Tomar decisiones informadas</li>
+      <li>Comprender los síntomas</li>
+      <li>Seguir mejor el tratamiento</li>
+      <li>Prevenir el daño renal</li>
+    </ol>
+  </div>
+</section>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(r => io.observe(r));
+
+  // Stagger children reveals
+  document.querySelectorAll('.function-item').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateX(16px)';
+    el.style.transition = `opacity .5s ${i * 0.1}s ease, transform .5s ${i * 0.1}s ease`;
+    const parent = el.closest('.functions-text');
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      }
+    }, { threshold: 0.1 }).observe(parent || el);
+  });
+</script>
+
 </body>
 </html>
