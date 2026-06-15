@@ -1,190 +1,117 @@
-/* ===== web1-viviendo-erc.html ===== */
-.page-viviendo *, .page-viviendo *::before, .page-viviendo *::after{box-sizing:border-box;margin:0;padding:0}:root{
-  --navy:#1e3a6e;
+/* =====================================================
+   IMIN / Viviendo ERC - maqueta HTML ajustada a PDFs
+   Los bloques .img-ph son espacios para tus imágenes finales.
+   ===================================================== */
+:root{
+  --navy:#162f62;
+  --navy2:#1e3a6e;
   --blue:#2857a4;
   --orange:#e8890c;
-  --white:#ffffff;
-  --cream:#faf7f3;
-  --light:#f5f4f2;
-  --text:#1e3a6e;
-  --gray:#555;
-  --border:#ddd;
-}body.page-viviendo{font-family:'Montserrat',sans-serif;color:var(--text);background:#fff;margin:0}.page-viviendo img{max-width:100%;display:block}.page-viviendo /* ── TABS NAV ── */
+  --cream:#fbf4f1;
+  --pink:#fbecf0;
+  --text:#23345d;
+  --muted:#555b6c;
+  --line:#d8dfec;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',Arial,sans-serif;color:var(--text);background:#fff;margin:0;font-size:14px}
+img{max-width:100%;display:block}
+
+/* ---------- navegación superior como los documentos ---------- */
 .tabs-nav{
-  background:#fff;border-bottom:3px solid var(--navy);
-  display:flex;align-items:stretch;
-}.page-viviendo .tabs-nav a{
-  flex:1;text-align:center;padding:10px 6px;
-  font-size:11px;font-weight:700;letter-spacing:.4px;
-  color:var(--navy);text-decoration:none;text-transform:uppercase;
-  border-right:1px solid #ccc;
-  display:flex;align-items:center;justify-content:center;
-  transition:background .15s;line-height:1.3;
-}.page-viviendo .tabs-nav a:last-child{border-right:none}.page-viviendo .tabs-nav a:hover{background:#eef3fa}.page-viviendo .tabs-nav a.active{background:var(--navy);color:#fff}.page-viviendo /* ── LOGO BAR ── */
+  height:27px;background:#fff;border-bottom:2px solid var(--navy);
+  display:flex;align-items:stretch;justify-content:center;position:relative;z-index:20;
+}
+.tabs-nav a{
+  flex:1;min-width:0;display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:5px 8px;border-right:1px solid #aeb8c8;text-decoration:none;text-transform:uppercase;
+  color:var(--navy);font-size:9px;font-weight:800;letter-spacing:.35px;line-height:1.05;white-space:nowrap;
+}
+.tabs-nav a:first-child{border-left:1px solid #aeb8c8}
+.tabs-nav a:hover{background:#edf2fb}
+.tabs-nav a.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* ---------- barra de logo: en los PDF está sobre azul, no blanca ---------- */
 .logo-bar{
-  background:#fff;padding:12px 40px;
-  display:flex;align-items:center;gap:0;
-  border-bottom:4px solid var(--navy);
-}.page-viviendo .logo-block{display:flex;align-items:center;gap:12px;flex-shrink:0}.page-viviendo .logo-icon{width:56px;height:56px;flex-shrink:0}.page-viviendo .logo-icon svg{width:56px;height:56px}.page-viviendo .logo-text-block{line-height:1.2}.page-viviendo .logo-text-block .brand{font-size:18px;font-weight:700;color:var(--navy);letter-spacing:1px}.page-viviendo .logo-text-block .brand span{color:var(--orange);font-weight:800}.page-viviendo .logo-text-block .sub{font-size:10px;letter-spacing:3px;color:var(--navy);font-weight:600}.page-viviendo .logo-divider{
-  width:2px;background:var(--navy);height:44px;margin:0 24px;flex-shrink:0;
-  position:relative;
-}.page-viviendo .logo-divider::after{
-  content:'';position:absolute;top:44px;left:0;right:0;height:60px;background:var(--navy);width:1px;margin:0 auto;
-}.page-viviendo .logo-program{font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.5px;line-height:1.5;text-transform:uppercase}.page-viviendo /* ── HERO ── */
-.hero{
-  background:var(--navy);
-  min-height:340px;
-  display:flex;align-items:center;
-  position:relative;overflow:hidden;
-  padding:50px 60px;
-}.page-viviendo .hero-img-placeholder{
-  position:absolute;right:0;top:0;bottom:0;width:45%;
-  background:#162f5a;
-  display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,.25);font-size:13px;letter-spacing:1px;
-  font-weight:600;text-transform:uppercase;
-}.page-viviendo .hero-img-placeholder::before{content:'[ IMAGEN ]'}.page-viviendo .hero-content{position:relative;z-index:2;max-width:55%}.page-viviendo .hero h1{color:#fff;line-height:1.15;margin-bottom:22px}.page-viviendo .hero h1 .line1{font-size:clamp(26px,3.5vw,42px);font-weight:400;display:block}.page-viviendo .hero h1 .line2{font-size:clamp(28px,4vw,48px);font-weight:800;font-style:italic;display:block}.page-viviendo .hero-tagline{
-  border:2px solid rgba(255,255,255,.5);
-  padding:14px 18px;margin-bottom:24px;max-width:360px;
-  color:#fff;font-size:14px;line-height:1.5;
-}.page-viviendo .hero-tagline strong{font-weight:800}.page-viviendo .hero-cta{
-  display:inline-block;background:#fff;color:var(--navy);
-  font-weight:700;font-size:14px;padding:12px 28px;
-  text-decoration:none;letter-spacing:.3px;
-}.page-viviendo .hero-icons{
-  position:absolute;right:5%;top:50%;transform:translateY(-50%);
-  z-index:3;display:flex;flex-direction:column;gap:14px;
-}.page-viviendo .hero-icon-item{display:flex;align-items:center;gap:10px;color:#fff}.page-viviendo .hero-icon-circle{
-  width:36px;height:36px;border-radius:50%;
-  background:rgba(255,255,255,.15);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}.page-viviendo .hero-icon-circle svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.page-viviendo .hero-icon-item span{font-size:12px;font-weight:600;white-space:nowrap}.page-viviendo /* ── ABOUT STRIP ── */
-.about-strip{
-  padding:36px 80px;text-align:center;background:#fff;
-}.page-viviendo .about-strip .main-text{
-  font-size:15px;color:var(--navy);margin-bottom:12px;line-height:1.6;
-}.page-viviendo .about-strip .main-text strong{font-weight:800}.page-viviendo .about-strip .gold-line{width:600px;max-width:100%;height:2px;background:var(--orange);margin:14px auto}.page-viviendo .about-strip .sub-text{font-size:14px;color:var(--gray);margin-top:4px}.page-viviendo /* ── ABOUT CONTENT ── */
-.about-content{padding:44px 80px;background:#fff;max-width:960px}.page-viviendo .about-content p{font-size:14px;line-height:1.85;color:#333;margin-bottom:16px;text-align:justify}.page-viviendo .about-content p strong{color:var(--navy);font-weight:800}.page-viviendo .about-content p em{color:var(--navy);font-style:normal;font-weight:700}.page-viviendo /* ── QUOTE ── */
-.quote-section{
-  padding:50px 80px;background:#fff;text-align:right;
-}.page-viviendo .quote-section blockquote{
-  font-size:clamp(20px,2.5vw,30px);
-  color:var(--navy);line-height:1.35;display:inline-block;text-align:right;
-}.page-viviendo .quote-section blockquote .q1{font-weight:400;display:block}.page-viviendo .quote-section blockquote .q2{font-weight:400;font-style:italic;display:block}.page-viviendo .quote-section blockquote .q3{font-weight:900;font-style:italic;display:block}.page-viviendo /* ── KIDNEY SECTION ── */
-.kidney-section{
-  padding:50px 80px;background:#fff;
-  display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:start;
-}.page-viviendo .kidney-text p{font-size:14px;line-height:1.85;color:#333;margin-bottom:20px;text-align:justify}.page-viviendo .kidney-mid{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:start}.page-viviendo .kidney-highlight{
-  border:2px solid var(--navy);padding:16px 20px;
-  text-align:center;
-}.page-viviendo .kidney-highlight p{font-size:16px;font-weight:700;color:var(--navy);line-height:1.3}.page-viviendo .kidney-highlight p em{font-style:italic;font-weight:900}.page-viviendo .kidney-mid-left p, .page-viviendo .kidney-mid-right p{font-size:13px;line-height:1.75;color:#333;text-align:justify}.page-viviendo .kidney-img-placeholder{
-  background:#e8eef5;height:300px;
-  display:flex;align-items:center;justify-content:center;
-  color:#8a99aa;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;
-  border:1px dashed #b0c0d0;
-}.page-viviendo /* ── FILTER INFOGRAPHIC ── */
-.filter-section{padding:40px 80px;background:#fff}.page-viviendo .filter-box{
-  border:1px solid #c0cce0;padding:24px;max-width:680px;
-}.page-viviendo .filter-box .ftitle{
-  font-size:16px;font-weight:800;color:var(--navy);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;
-}.page-viviendo .filter-box .fsub{font-size:12px;color:var(--gray);margin-bottom:16px}.page-viviendo .filter-img-placeholder{
-  background:#e8eef5;height:220px;
-  display:flex;align-items:center;justify-content:center;
-  color:#8a99aa;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;
-  border:1px dashed #b0c0d0;
-}.page-viviendo .filter-note{font-size:12px;color:var(--gray);font-style:italic;margin-top:16px;text-align:right;max-width:680px}.page-viviendo /* ── ERC CTA ── */
-.erc-cta{
-  padding:60px 80px;background:#fff;
-  display:flex;align-items:center;justify-content:space-between;gap:40px;
-}.page-viviendo .erc-cta-text .line1{font-size:clamp(18px,2.2vw,26px);font-weight:400;color:var(--navy)}.page-viviendo .erc-cta-text .line2{font-size:clamp(24px,3.2vw,42px);font-weight:800;color:var(--navy)}.page-viviendo .erc-cta-logo{
-  display:flex;align-items:center;gap:12px;flex-shrink:0;
-}.page-viviendo .erc-cta-logo .logo-icon-sm{width:64px;height:64px}.page-viviendo /* ── MISION / VISION ── */
-.mv-section{padding:40px 80px 60px;background:#fff}.page-viviendo .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.page-viviendo .mv-label{
-  font-family:'Montserrat',sans-serif;
-  font-size:clamp(28px,3.5vw,44px);font-weight:900;
-  font-style:italic;color:var(--navy);text-transform:uppercase;
-  margin-bottom:12px;letter-spacing:1px;
-}.page-viviendo .mv-card{
-  background:#f0f4f9;padding:24px;border:1px solid #c8d8ea;
-}.page-viviendo .mv-card p{font-size:13px;line-height:1.75;color:#333}.page-viviendo /* ── FOOTER ── */
-.site-footer{
-  background:var(--navy);padding:20px 60px;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
-}.page-viviendo .site-footer p{font-size:12px;color:rgba(255,255,255,.6)}
+  background:var(--navy);height:52px;padding:9px 42px;display:flex;align-items:center;gap:18px;color:#fff;
+  position:relative;z-index:12;border:0;
+}
+.logo-block{display:flex;align-items:center;gap:9px;min-width:200px}
+.logo-icon{width:45px;height:45px;flex-shrink:0}.logo-icon svg{width:45px;height:45px;display:block}
+.logo-text-block{line-height:1.05}.logo-text-block .brand{font-size:13px;font-weight:800;color:#fff;letter-spacing:.5px}.logo-text-block .brand span{color:#f4a223}.logo-text-block .sub{font-size:7px;letter-spacing:2px;color:#fff;font-weight:600;text-align:center;margin-top:1px}
+.logo-divider{width:95px;height:1px;background:#fff;margin-left:4px;position:relative;flex-shrink:0}.logo-divider::before{content:"";position:absolute;left:0;top:0;height:18px;width:1px;background:#fff}.logo-divider::after{content:"";position:absolute;right:0;top:0;height:18px;width:1px;background:#fff}
+.logo-program{font-size:10px;line-height:1.15;font-weight:800;text-transform:uppercase;letter-spacing:.45px;color:#fff}
 
-/* ===== web2-dialisis.html ===== */
-.page-dialisis *, .page-dialisis *::before, .page-dialisis *::after{box-sizing:border-box;margin:0;padding:0}:root{--navy:#1e3a6e;--blue:#2857a4;--orange:#e8890c;--white:#fff;--cream:#faf7f3;--gray:#555;--red:#c0392b}body.page-dialisis{font-family:'Montserrat',sans-serif;color:var(--navy);background:#fff;margin:0}.page-dialisis /* shared nav/header same as WEB1 */
-.tabs-nav{background:#fff;border-bottom:3px solid var(--navy);display:flex;align-items:stretch}.page-dialisis .tabs-nav a{flex:1;text-align:center;padding:10px 6px;font-size:11px;font-weight:700;letter-spacing:.4px;color:var(--navy);text-decoration:none;text-transform:uppercase;border-right:1px solid #ccc;display:flex;align-items:center;justify-content:center;transition:background .15s;line-height:1.3}.page-dialisis .tabs-nav a:last-child{border-right:none}.page-dialisis .tabs-nav a:hover{background:#eef3fa}.page-dialisis .tabs-nav a.active{background:var(--navy);color:#fff}.page-dialisis .logo-bar{background:#fff;padding:12px 40px;display:flex;align-items:center;gap:0;border-bottom:4px solid var(--navy)}.page-dialisis .logo-block{display:flex;align-items:center;gap:12px;flex-shrink:0}.page-dialisis .logo-icon{width:56px;height:56px;flex-shrink:0}.page-dialisis .logo-text-block .brand{font-size:18px;font-weight:700;color:var(--navy);letter-spacing:1px}.page-dialisis .logo-text-block .brand span{color:var(--orange);font-weight:800}.page-dialisis .logo-text-block .sub{font-size:10px;letter-spacing:3px;color:var(--navy);font-weight:600}.page-dialisis .logo-divider{width:2px;background:var(--navy);height:44px;margin:0 24px;flex-shrink:0}.page-dialisis .logo-program{font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.5px;line-height:1.5;text-transform:uppercase}.page-dialisis /* shared placeholder */
-.img-ph{background:#e8eef5;display:flex;align-items:center;justify-content:center;color:#8a99aa;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border:1px dashed #b0c0d0}.page-dialisis /* ── HERO ── */
-.hero{background:var(--navy);min-height:260px;display:flex;align-items:flex-end;justify-content:flex-end;position:relative;overflow:hidden;padding:40px 60px}.page-dialisis .hero-img-ph{position:absolute;inset:0;background:#162f5a;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.2);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase}.page-dialisis .hero-img-ph::before{content:'[ IMAGEN DE FONDO ]'}.page-dialisis .hero-title{position:relative;z-index:2;text-align:right}.page-dialisis .hero-title .l1{font-size:clamp(28px,4vw,52px);font-weight:400;color:#fff;display:block}.page-dialisis .hero-title .l2{font-size:clamp(32px,5vw,64px);font-weight:900;font-style:italic;color:#fff;display:block}.page-dialisis /* ── TRATAMIENTOS ── */
-.trat-section{padding:52px 80px;background:#fff;text-align:center}.page-dialisis .trat-section h2{font-size:clamp(16px,2vw,22px);font-weight:800;color:var(--navy);margin-bottom:12px}.page-dialisis .trat-section .sub{font-size:14px;color:var(--gray);line-height:1.65;margin-bottom:6px}.page-dialisis .trat-section .highlight{font-size:clamp(18px,2.5vw,28px);font-weight:800;color:var(--orange)}.page-dialisis /* ── ETAPA 5 QUESTION ── */
-.etapa5-q{
-  padding:52px 80px;background:var(--cream);
-  display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start;
-}.page-dialisis .etapa5-q .left h2{font-size:clamp(20px,2.8vw,34px);font-weight:400;color:var(--navy);line-height:1.25}.page-dialisis .etapa5-q .left h2 strong{font-weight:900}.page-dialisis .etapa5-q .right{display:flex;flex-direction:column;gap:16px}.page-dialisis .bullet-item{display:flex;align-items:flex-start;gap:12px}.page-dialisis .bullet-icon{width:32px;height:32px;flex-shrink:0;display:flex;align-items:center;justify-content:center}.page-dialisis .bullet-icon svg{width:24px;height:24px}.page-dialisis .bullet-item p{font-size:13px;color:#333;line-height:1.65}.page-dialisis /* ── STAGES TEXT ── */
-.stages-text{padding:40px 80px;background:var(--cream);text-align:center}.page-dialisis .stages-text p{font-size:14px;color:#333;line-height:1.75;max-width:760px;margin:0 auto 24px}.page-dialisis .stages-text h3{font-size:clamp(16px,2.2vw,22px);font-weight:800;color:var(--navy);letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}.page-dialisis .stages-img-ph{width:100%;height:260px;max-width:860px;margin:0 auto}.page-dialisis /* ── DIALISIS ICON STRIP ── */
-.dialisis-icon{
-  padding:36px 80px;background:var(--cream);
-  display:flex;align-items:center;gap:24px;
-}.page-dialisis .dialisis-icon-img{width:60px;height:60px;flex-shrink:0;background:#e0ecf8;border-radius:50%;display:flex;align-items:center;justify-content:center}.page-dialisis .dialisis-icon-img svg{width:32px;height:32px;stroke:var(--navy);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.page-dialisis .dialisis-icon-text{font-size:14px;color:#333;line-height:1.7;max-width:700px}.page-dialisis .dialisis-icon-text strong{color:var(--navy);font-weight:800}.page-dialisis /* ── ETAPA 5 BIG ── */
-.etapa5-big{
-  padding:40px 80px;background:var(--cream);
-  display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:start;
-}.page-dialisis .etapa5-big .big-label{
-  font-size:clamp(60px,8vw,100px);font-weight:900;color:var(--navy);line-height:1;
-  display:flex;flex-direction:column;
-}.page-dialisis .etapa5-big .big-label .et{font-size:clamp(20px,2.5vw,30px);font-weight:700}.page-dialisis .etapa5-infographic-ph{width:100%;height:320px}.page-dialisis /* ── QUE ES DIALISIS ── */
-.que-dialisis{
-  padding:48px 80px;background:var(--cream);
-  display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start;
-}.page-dialisis .que-dialisis .qlabel{font-size:clamp(22px,3vw,38px);font-weight:900;color:var(--navy);line-height:1.2}.page-dialisis .que-dialisis .qlabel em{font-style:italic}.page-dialisis .que-dialisis .qtext p{font-size:14px;color:#333;line-height:1.8;margin-bottom:12px}.page-dialisis /* ── DIALISIS HOY ── */
-.dialisis-hoy{
-  padding:48px 80px;background:var(--cream);
-  display:grid;grid-template-columns:1fr 1fr;gap:48px;
-}.page-dialisis .dialisis-hoy-title{
-  grid-column:1/-1;
-  font-size:clamp(20px,3vw,36px);font-weight:800;color:var(--navy);
-}.page-dialisis .dialisis-hoy-title span{color:var(--orange)}.page-dialisis .icons-flow{display:flex;align-items:center;gap:10px;margin-top:20px;flex-wrap:wrap}.page-dialisis .flow-item{text-align:center}.page-dialisis .flow-circle{width:52px;height:52px;border-radius:50%;border:2px solid var(--navy);display:flex;align-items:center;justify-content:center;margin:0 auto 6px}.page-dialisis .flow-circle svg{width:24px;height:24px;stroke:var(--navy);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.page-dialisis .flow-item p{font-size:10px;font-weight:600;color:var(--navy);text-align:center;max-width:60px}.page-dialisis .flow-arrow{font-size:18px;color:var(--navy);font-weight:700;margin-top:-16px}.page-dialisis .dialisis-hoy .left-col p, .page-dialisis .dialisis-hoy .right-col p{font-size:13.5px;color:#333;line-height:1.8;margin-bottom:12px}.page-dialisis .dialisis-hoy .left-col p strong, .page-dialisis .dialisis-hoy .right-col p strong{color:var(--navy);font-weight:800}.page-dialisis /* ── HEMO VS PERITONEAL ── */
-.hvp-section{padding:48px 80px;background:var(--cream)}.page-dialisis .hvp-cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-bottom:28px}.page-dialisis .hvp-cols h3{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:12px}.page-dialisis .hvp-cols p{font-size:13.5px;color:#333;line-height:1.8;margin-bottom:8px}.page-dialisis .hvp-cols p em{font-style:italic;color:#444}.page-dialisis .hvp-table-ph{width:100%;height:280px;max-width:900px}.page-dialisis /* ── NUEVO COMIENZO ── */
-.nuevo{padding:48px 80px;background:var(--cream)}.page-dialisis .nuevo h2{font-size:clamp(22px,3vw,38px);font-weight:300;color:var(--navy);margin-bottom:4px}.page-dialisis .nuevo h2 em{font-style:italic;font-weight:900;color:var(--orange)}.page-dialisis .nuevo-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:28px;align-items:start}.page-dialisis .nuevo-grid .left p{font-size:14px;color:#333;line-height:1.8;margin-bottom:12px}.page-dialisis .nuevo-grid .left p strong{color:var(--navy);font-weight:800}.page-dialisis .nuevo-grid .right-ph{height:280px}.page-dialisis /* ── TIPS ── */
-.tips-section{padding:32px 80px;background:var(--cream)}.page-dialisis .tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}.page-dialisis .tips-grid .left-ph{height:340px}.page-dialisis .tips-grid .right-ph{height:340px}.page-dialisis /* ── NO ESTAS SOLO ── */
-.no-solo{
-  padding:60px 80px;background:#fff;text-align:center;
-}.page-dialisis .no-solo h2{font-size:clamp(24px,3.5vw,46px);font-weight:300;color:var(--navy);margin-bottom:0}.page-dialisis .no-solo h2 em{font-style:italic;font-weight:900}.page-dialisis .no-solo .sub{font-size:clamp(14px,2vw,22px);font-weight:400;font-style:italic;color:var(--navy);margin-top:4px}.page-dialisis /* footer */
-.site-footer{background:var(--navy);padding:20px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}.page-dialisis .site-footer p{font-size:12px;color:rgba(255,255,255,.6)}
+/* ---------- placeholders para imágenes ---------- */
+.img-ph,.hero-img-placeholder,.hero-img-ph,.kidney-img-placeholder,.filter-img-placeholder,.video-placeholder{
+  background:linear-gradient(135deg,#eef3fa,#dfe9f4);border:1px dashed #92a8c3;color:#7890ad;
+  display:flex;align-items:center;justify-content:center;text-align:center;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.6px;
+}
 
-/* ===== web3-insuficiencia.html ===== */
-.page-insuficiencia *, .page-insuficiencia *::before, .page-insuficiencia *::after{box-sizing:border-box;margin:0;padding:0}:root{--navy:#1e3a6e;--blue:#2857a4;--orange:#e8890c;--white:#fff;--cream:#faf7f3;--gray:#555}body.page-insuficiencia{font-family:'Montserrat',sans-serif;color:var(--navy);background:#fff;margin:0}.page-insuficiencia .img-ph{background:#e8eef5;display:flex;align-items:center;justify-content:center;color:#8a99aa;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border:1px dashed #b0c0d0}.page-insuficiencia /* nav/header */
-.tabs-nav{background:#fff;border-bottom:3px solid var(--navy);display:flex;align-items:stretch}.page-insuficiencia .tabs-nav a{flex:1;text-align:center;padding:10px 6px;font-size:11px;font-weight:700;letter-spacing:.4px;color:var(--navy);text-decoration:none;text-transform:uppercase;border-right:1px solid #ccc;display:flex;align-items:center;justify-content:center;transition:background .15s;line-height:1.3}.page-insuficiencia .tabs-nav a:last-child{border-right:none}.page-insuficiencia .tabs-nav a:hover{background:#eef3fa}.page-insuficiencia .tabs-nav a.active{background:var(--navy);color:#fff}.page-insuficiencia .logo-bar{background:#fff;padding:12px 40px;display:flex;align-items:center;gap:0;border-bottom:4px solid var(--navy)}.page-insuficiencia .logo-block{display:flex;align-items:center;gap:12px;flex-shrink:0}.page-insuficiencia .logo-icon{width:56px;height:56px;flex-shrink:0}.page-insuficiencia .logo-text-block .brand{font-size:18px;font-weight:700;color:var(--navy);letter-spacing:1px}.page-insuficiencia .logo-text-block .brand span{color:var(--orange);font-weight:800}.page-insuficiencia .logo-text-block .sub{font-size:10px;letter-spacing:3px;color:var(--navy);font-weight:600}.page-insuficiencia .logo-divider{width:2px;background:var(--navy);height:44px;margin:0 24px;flex-shrink:0}.page-insuficiencia .logo-program{font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.5px;line-height:1.5;text-transform:uppercase}.page-insuficiencia /* ── HERO ── */
-.hero{
-  background:var(--navy);min-height:260px;
-  display:flex;align-items:center;
-  position:relative;overflow:hidden;padding:50px 80px;
-}.page-insuficiencia .hero-img-ph{position:absolute;right:0;top:0;bottom:0;width:40%;background:#2044a0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.2);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase}.page-insuficiencia .hero-img-ph::before{content:'[ IMAGEN PACIENTE ]'}.page-insuficiencia .hero-title{position:relative;z-index:2}.page-insuficiencia .hero-title .l1{font-size:clamp(26px,3.5vw,44px);font-weight:400;color:#fff;display:block}.page-insuficiencia .hero-title .l2{font-size:clamp(28px,4vw,50px);font-weight:900;font-style:italic;color:#fff;display:block}.page-insuficiencia /* ── RINON ARTIFICIAL ── */
-.rinon-sec{
-  padding:52px 80px;background:#fff;
-  display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start;
-}.page-insuficiencia .rinon-text h2{
-  font-size:clamp(18px,2.2vw,26px);font-weight:700;color:var(--navy);
-  margin-bottom:18px;text-align:right;
-}.page-insuficiencia .rinon-text h2 span{color:var(--orange);font-weight:800}.page-insuficiencia .rinon-text p{font-size:14px;color:#333;line-height:1.85;margin-bottom:12px;text-align:justify}.page-insuficiencia .rinon-img-ph{height:260px}.page-insuficiencia /* ── BODY TEXT ── */
-.body-text{padding:28px 80px;background:#fff}.page-insuficiencia .body-text p{font-size:14px;color:#333;line-height:1.85;margin-bottom:16px;text-align:justify}.page-insuficiencia .body-text .italic-quote{
-  font-size:clamp(14px,1.6vw,17px);font-style:italic;color:var(--navy);
-  line-height:1.7;margin:28px 0;padding-left:0;text-align:center;
-}.page-insuficiencia .body-text .italic-quote strong{font-weight:900;color:var(--navy)}.page-insuficiencia /* ── HEMODIALISIS TITLE ── */
-.hemo-title{padding:16px 80px 28px;background:#fff;text-align:center}.page-insuficiencia .hemo-title h2{font-size:clamp(18px,2.8vw,34px);font-weight:900;line-height:1.2}.page-insuficiencia .hemo-title h2 .orange{color:var(--orange)}.page-insuficiencia .hemo-title h2 .navy{color:var(--navy)}.page-insuficiencia .hemo-title .sub{font-size:clamp(14px,1.8vw,20px);font-weight:400;color:var(--navy);text-align:right;margin-top:4px}.page-insuficiencia .hemo-title p.desc{font-size:14px;color:#333;line-height:1.8;max-width:860px;margin:18px auto 0;text-align:justify}.page-insuficiencia /* ── BODY DIAGRAM ── */
-.body-diagram{
-  padding:48px 80px;background:var(--cream);
-  display:grid;grid-template-columns:280px 1fr 280px;gap:28px;align-items:start;
-}.page-insuficiencia .diagram-col h4{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}.page-insuficiencia .diagram-col p{font-size:12px;color:#333;line-height:1.65}.page-insuficiencia .diagram-center-ph{height:360px}.page-insuficiencia .diagram-right-ph{height:160px;margin-bottom:16px}.page-insuficiencia .diagram-right-box{border:1px solid #c0cce0;padding:14px;margin-top:0}.page-insuficiencia .diagram-right-box h4{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}.page-insuficiencia .diagram-right-box p{font-size:12px;color:#333;line-height:1.65}.page-insuficiencia /* ── VIDEO SECTION ── */
-.video-sec{
-  padding:52px 80px;background:var(--cream);
-  display:grid;grid-template-columns:1fr 400px;gap:48px;align-items:center;
-}.page-insuficiencia .video-text h2{font-size:clamp(18px,2.5vw,30px);color:var(--blue);font-weight:700;margin-bottom:4px}.page-insuficiencia .video-text h2 span{color:var(--orange)}.page-insuficiencia .video-text p{font-size:14px;color:#333;line-height:1.85;margin-top:16px;text-align:justify}.page-insuficiencia .video-placeholder{
-  background:var(--navy);height:280px;border-radius:8px;
-  display:flex;align-items:center;justify-content:center;
-}.page-insuficiencia .play-btn{
-  width:64px;height:64px;border-radius:50%;border:3px solid rgba(255,255,255,.7);
-  display:flex;align-items:center;justify-content:center;cursor:pointer;
-}.page-insuficiencia .play-btn svg{width:28px;height:28px;fill:white;margin-left:4px}.page-insuficiencia /* footer */
-.site-footer{background:var(--navy);padding:20px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}.page-insuficiencia .site-footer p{font-size:12px;color:rgba(255,255,255,.6)}
+/* Fondo con formas suaves rosadas como los PDF */
+body::before,body::after{content:"";position:fixed;z-index:-1;border-radius:50%;pointer-events:none;opacity:.65}
+body::before{width:560px;height:760px;left:-200px;top:340px;background:radial-gradient(ellipse at center,rgba(246,221,226,.75),rgba(246,221,226,.2) 60%,transparent 70%);transform:rotate(-24deg)}
+body::after{width:560px;height:720px;right:-210px;top:620px;background:radial-gradient(ellipse at center,rgba(248,225,219,.6),rgba(248,225,219,.16) 62%,transparent 72%);transform:rotate(22deg)}
+
+/* =====================================================
+   WEB 1 / VIVIENDO ERC
+   ===================================================== */
+.page-viviendo .hero{
+  min-height:205px;background:linear-gradient(90deg,rgba(22,47,98,.98) 0%,rgba(22,47,98,.92) 48%,rgba(22,47,98,.55) 100%);
+  margin-top:-52px;padding:74px 60px 28px;position:relative;overflow:hidden;display:flex;align-items:center;
+}
+.page-viviendo .hero-img-placeholder{position:absolute;inset:0 0 0 auto;width:54%;height:100%;background:linear-gradient(90deg,rgba(22,47,98,.65),rgba(22,47,98,.2)),linear-gradient(135deg,#2b4775,#10264f);border:0;color:rgba(255,255,255,.18)}
+.page-viviendo .hero-img-placeholder::before{content:'IMAGEN RIÑÓN / FONDO'}
+.page-viviendo .hero-content{position:relative;z-index:2;width:54%;padding-left:0;text-align:left}.page-viviendo .hero h1{color:#fff;line-height:.98;margin:0 0 12px}.page-viviendo .hero h1 .line1{display:block;font-size:28px;font-weight:500;letter-spacing:.6px}.page-viviendo .hero h1 .line2{display:block;font-size:31px;font-weight:900;font-style:italic;letter-spacing:.3px}
+.page-viviendo .hero-tagline{display:inline-block;border:2px solid rgba(255,255,255,.75);padding:7px 12px;margin:0 0 10px 84px;color:#fff;font-size:11px;line-height:1.25;text-align:right}.page-viviendo .hero-tagline strong{font-weight:900}.page-viviendo .hero-cta{display:inline-block;background:#fff;color:var(--navy);border-radius:5px;padding:5px 14px;margin-left:160px;text-decoration:none;font-size:10px;font-weight:800;box-shadow:0 2px 6px rgba(0,0,0,.22)}
+.page-viviendo .hero-icons{position:absolute;right:88px;top:112px;z-index:3;background:rgba(10,24,52,.65);border-radius:10px;padding:9px 12px;display:flex;flex-direction:column;gap:8px}.page-viviendo .hero-icon-item{display:flex;align-items:center;gap:8px;color:#fff}.page-viviendo .hero-icon-circle{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center}.page-viviendo .hero-icon-circle svg{width:14px;height:14px;stroke:#fff;fill:none}.page-viviendo .hero-icon-item span{font-size:9px;font-weight:700;white-space:nowrap}
+.page-viviendo .about-strip{max-width:900px;margin:26px auto 0;text-align:center;padding:0 50px}.page-viviendo .about-strip .main-text{font-size:12px;line-height:1.35;color:var(--navy);font-weight:500}.page-viviendo .about-strip .main-text strong{font-weight:900}.page-viviendo .gold-line{height:2px;background:var(--orange);width:100%;margin:10px auto}.page-viviendo .about-strip .sub-text{font-size:10px;color:var(--muted)}
+.page-viviendo .about-content{max-width:900px;margin:28px auto 0;padding:0 55px}.page-viviendo .about-content p{font-size:10.5px;line-height:1.55;color:#26344e;margin-bottom:8px;text-align:justify}.page-viviendo .about-content strong{font-weight:900;color:var(--navy)}.page-viviendo .about-content em{font-style:normal;font-weight:800;color:var(--navy)}
+.page-viviendo .quote-section{max-width:900px;margin:20px auto 0;padding:0 55px;text-align:center}.page-viviendo blockquote{display:inline-block;color:var(--navy);font-size:22px;line-height:.98;font-weight:500}.page-viviendo blockquote .q1,.page-viviendo blockquote .q2,.page-viviendo blockquote .q3{display:block}.page-viviendo blockquote .q2{font-style:italic}.page-viviendo blockquote .q3{font-style:italic;font-weight:900}
+.page-viviendo .kidney-section{max-width:900px;margin:20px auto 0;padding:0 55px;display:grid;grid-template-columns:1fr 330px;gap:28px;align-items:center}.page-viviendo .kidney-text>p{font-size:10.5px;line-height:1.45;text-align:justify;color:#31415d;margin-bottom:9px}.page-viviendo .kidney-mid{display:grid;grid-template-columns:1fr 104px 1fr;gap:8px;align-items:center}.page-viviendo .kidney-mid p{font-size:9.5px;line-height:1.25;color:#30405a;text-align:justify}.page-viviendo .kidney-highlight{border:2px solid var(--navy);padding:7px 5px;text-align:center;background:#fff}.page-viviendo .kidney-highlight p{font-size:14px;line-height:1.05;font-weight:700;text-align:center}.page-viviendo .kidney-highlight em{font-weight:900;font-style:italic;font-size:17px}.page-viviendo .kidney-img-placeholder{height:155px;border:0;background:linear-gradient(135deg,#fff0e9,#d8edf8);font-size:10px}
+.page-viviendo .filter-section{max-width:900px;margin:22px auto 0;padding:0 34px;position:relative}.page-viviendo .filter-box{border:2px solid #8fa3c2;background:#fff;padding:12px;width:510px;min-height:150px}.page-viviendo .ftitle{font-size:16px;font-weight:900;color:var(--navy);text-align:center}.page-viviendo .fsub{font-size:8.5px;text-align:center;color:#444;margin:3px 0 8px}.page-viviendo .filter-img-placeholder{height:105px;background:#f7f8fb}.page-viviendo .filter-note{position:absolute;right:75px;top:55px;width:230px;font-size:9px;line-height:1.2;font-style:italic;color:#6b6170;text-align:center}
+.page-viviendo .erc-cta{max-width:900px;margin:62px auto 0;padding:0 92px;display:flex;align-items:center;justify-content:center;gap:24px;text-align:center}.page-viviendo .erc-cta-text .line1{font-size:15px;font-weight:800}.page-viviendo .erc-cta-text .line2{font-size:27px;line-height:1;font-weight:900;font-style:italic}.page-viviendo .erc-cta-logo{width:125px}.page-viviendo .erc-cta-logo .logo-icon-sm{width:75px;margin:auto}.page-viviendo .erc-cta-logo svg{width:75px;height:75px}.page-viviendo .erc-cta-logo .logo-text-block .brand{color:var(--navy)!important}.page-viviendo .erc-cta-logo .logo-text-block .sub{color:var(--navy)!important}
+.page-viviendo .mv-section{max-width:900px;margin:30px auto 45px;padding:0 80px}.page-viviendo .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}.page-viviendo .mv-label{font-size:25px;font-weight:900;font-style:italic;text-align:center;color:var(--navy);margin-bottom:5px;text-transform:uppercase}.page-viviendo .mv-card{min-height:86px;border:2px solid #6c7f9e;background:rgba(255,255,255,.48);padding:9px 12px}.page-viviendo .mv-card p{font-size:9.5px;line-height:1.35;color:#253855;text-align:justify}
+
+/* =====================================================
+   WEB 2 / DIÁLISIS AL DESCUBIERTO
+   ===================================================== */
+.page-dialisis .hero{min-height:145px;margin-top:-52px;padding:64px 60px 22px;background:linear-gradient(90deg,rgba(22,47,98,.85),rgba(22,47,98,.62)),linear-gradient(135deg,#213d69,#455b75);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:flex-end}.page-dialisis .hero-img-ph{position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,47,98,.65),rgba(22,47,98,.25)),linear-gradient(135deg,#283d62,#8490a0);border:0;color:rgba(255,255,255,.16)}.page-dialisis .hero-title{position:relative;z-index:2;text-align:right;margin-right:55px;line-height:.92}.page-dialisis .hero-title .l1{font-size:29px;color:#fff;font-weight:600;display:block}.page-dialisis .hero-title .l2{font-size:32px;color:#fff;font-weight:900;font-style:italic;display:block}
+.page-dialisis .trat-section{max-width:900px;margin:30px auto 0;text-align:center;padding:0 50px}.page-dialisis .trat-section h2{font-size:16px;font-weight:900;margin-bottom:7px}.page-dialisis .trat-section .sub{font-size:11px;line-height:1.3;color:#34425d}.page-dialisis .trat-section .highlight{font-size:20px;font-weight:900;color:var(--orange);line-height:1}
+.page-dialisis .etapa5-q{max-width:900px;margin:18px auto 0;padding:0 52px;display:grid;grid-template-columns:310px 1fr;gap:30px;align-items:center}.page-dialisis .etapa5-q .left{border-top:2px solid #98a9c0;border-bottom:2px solid #98a9c0;padding:12px 0}.page-dialisis .etapa5-q h2{font-size:21px;line-height:1.05;font-weight:500;text-align:center}.page-dialisis .etapa5-q strong{font-weight:900;font-style:italic}.page-dialisis .right{display:grid;gap:4px}.page-dialisis .bullet-item{display:grid;grid-template-columns:22px 1fr;gap:8px;align-items:start}.page-dialisis .bullet-icon svg{width:17px;height:17px}.page-dialisis .bullet-item p{font-size:9.5px;line-height:1.28;color:#2b3650;text-align:justify}
+.page-dialisis .stages-text{max-width:900px;margin:8px auto 0;padding:0 120px;text-align:center}.page-dialisis .stages-text p{font-size:9.8px;line-height:1.28;color:#36425a;margin-bottom:7px}.page-dialisis .stages-text h3{font-size:18px;letter-spacing:2px;font-weight:900;color:var(--navy);margin-bottom:5px}.page-dialisis .stages-img-ph{height:75px;border:2px solid #8194b0;background:#fff}
+.page-dialisis .dialisis-icon{max-width:900px;margin:8px auto 0;padding:0 145px;display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:center}.page-dialisis .dialisis-icon-img{width:34px;height:34px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center}.page-dialisis .dialisis-icon-img svg{width:22px;height:22px;stroke:#fff;fill:none}.page-dialisis .dialisis-icon-text{font-size:9.8px;line-height:1.32;color:#35415a;text-align:justify}.page-dialisis .dialisis-icon-text strong{font-weight:900;color:var(--navy)}
+.page-dialisis .etapa5-big{max-width:900px;margin:8px auto 0;padding:0 94px;display:grid;grid-template-columns:78px 1fr;gap:8px;align-items:center}.page-dialisis .big-label{font-weight:900;color:var(--navy);line-height:.78}.page-dialisis .big-label .et{font-size:21px;font-style:italic}.page-dialisis .big-label span:last-child{font-size:52px!important}.page-dialisis .etapa5-infographic-ph{height:78px;border:2px solid #8ba0bb;background:#fff}
+.page-dialisis .que-dialisis{max-width:900px;margin:12px auto 0;padding:0 52px;display:grid;grid-template-columns:165px 1fr;gap:35px;align-items:center}.page-dialisis .qlabel{border:2px solid #8ba0bb;padding:12px 6px;font-size:18px;line-height:1;text-align:center;font-weight:500}.page-dialisis .qlabel em{font-weight:900;font-style:italic;font-size:23px}.page-dialisis .qtext p{font-size:9.7px;line-height:1.35;color:#2f3e58;text-align:justify}
+.page-dialisis .dialisis-hoy{max-width:900px;margin:8px auto 0;padding:0 52px;display:grid;grid-template-columns:1fr 1fr;gap:28px}.page-dialisis .dialisis-hoy-title{grid-column:1/-1;text-align:right;font-size:24px;line-height:1;font-weight:900;color:var(--navy);margin-bottom:-8px}.page-dialisis .dialisis-hoy-title span{color:var(--orange);font-weight:700;font-style:italic}.page-dialisis .left-col p,.page-dialisis .right-col p{font-size:9.7px;line-height:1.35;color:#2f3e58;text-align:justify;margin-bottom:6px}.page-dialisis strong{font-weight:900;color:var(--navy)}.page-dialisis .icons-flow{display:flex;align-items:flex-start;gap:8px;margin-top:10px}.page-dialisis .flow-circle{width:28px;height:28px;border:2px solid var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:auto}.page-dialisis .flow-circle svg{width:15px;height:15px;stroke:var(--navy);fill:none}.page-dialisis .flow-item p{font-size:7.5px;line-height:1.1;text-align:center;margin-top:4px}.page-dialisis .flow-arrow{font-size:14px;font-weight:900;margin-top:7px;color:var(--navy)}
+.page-dialisis .hvp-section{max-width:900px;margin:12px auto 0;padding:0 74px}.page-dialisis .hvp-cols{display:grid;grid-template-columns:1fr 1fr;gap:54px;margin-bottom:8px}.page-dialisis .hvp-cols h3{font-size:14px;text-align:center;font-weight:900;margin-bottom:5px}.page-dialisis .hvp-cols p{font-size:9.5px;line-height:1.35;color:#2f3e58;text-align:justify}.page-dialisis .hvp-table-ph{height:135px;border:2px solid #8194b0;background:#fff}
+.page-dialisis .nuevo{max-width:900px;margin:20px auto 0;padding:0 52px}.page-dialisis .nuevo h2{font-size:24px;line-height:.9;font-weight:900;color:var(--navy)}.page-dialisis .nuevo h2 em{font-style:italic;color:var(--orange)}.page-dialisis .nuevo-grid{margin-top:8px;display:grid;grid-template-columns:210px 1fr;gap:25px}.page-dialisis .nuevo-grid p{font-size:10px;line-height:1.45;margin-bottom:8px}.page-dialisis .right-ph{height:150px;border:2px solid #8194b0;background:#fff}
+.page-dialisis .tips-section{max-width:900px;margin:8px auto 0;padding:0 52px}.page-dialisis .tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.page-dialisis .tips-grid .img-ph{height:115px!important;border:2px solid #8194b0;background:#fff}
+.page-dialisis .no-solo{max-width:900px;margin:18px auto 35px;padding:0 52px;text-align:right;border-top:2px solid #8aa0bb;border-bottom:2px solid #8aa0bb}.page-dialisis .no-solo h2{font-size:23px;line-height:.9;font-weight:900;color:var(--navy)}.page-dialisis .no-solo .sub{font-size:20px;font-style:italic;color:var(--navy);line-height:1}
+
+/* =====================================================
+   WEB 3 / INSUFICIENCIA RENAL & DIÁLISIS
+   ===================================================== */
+.page-insuficiencia .hero{min-height:150px;margin-top:-52px;padding:64px 80px 20px;background:linear-gradient(90deg,rgba(22,47,98,.95),rgba(22,47,98,.55)),linear-gradient(135deg,#22406e,#8692a2);position:relative;overflow:hidden;display:flex;align-items:center}.page-insuficiencia .hero-img-ph{position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,47,98,.7),rgba(22,47,98,.25)),linear-gradient(135deg,#2b4370,#b4b6bd);border:0;color:rgba(255,255,255,.16)}.page-insuficiencia .hero-title{position:relative;z-index:2;margin-left:26px;line-height:.92}.page-insuficiencia .hero-title .l1{font-size:28px;font-weight:500;color:#fff;display:block}.page-insuficiencia .hero-title .l2{font-size:31px;font-weight:900;color:#fff;font-style:italic;display:block}
+.page-insuficiencia .rinon-sec{max-width:900px;margin:42px auto 0;padding:0 60px;display:grid;grid-template-columns:1fr 315px;gap:35px;align-items:start}.page-insuficiencia .rinon-text h2{font-size:18px;text-align:center;font-weight:900;line-height:1.05;margin-bottom:5px}.page-insuficiencia .rinon-text h2 span{color:var(--orange)}.page-insuficiencia .rinon-text p{font-size:9.7px;line-height:1.35;color:#2f3e58;text-align:justify;margin-bottom:8px}.page-insuficiencia .rinon-img-ph{height:160px;border:2px solid #8194b0;background:#fff}
+.page-insuficiencia .body-text{max-width:900px;margin:5px auto 0;padding:0 80px}.page-insuficiencia .italic-quote{text-align:center;font-size:12px;line-height:1.25;color:var(--navy);font-style:italic}.page-insuficiencia .italic-quote strong{font-weight:900;font-style:italic;color:var(--blue)}
+.page-insuficiencia .hemo-title{max-width:900px;margin:12px auto 0;padding:0 70px;text-align:center}.page-insuficiencia .hemo-title h2{font-size:20px;line-height:1.05}.page-insuficiencia .hemo-title .orange{color:var(--orange);font-weight:900}.page-insuficiencia .hemo-title .navy{color:var(--navy);font-weight:900}.page-insuficiencia .hemo-title .sub{font-size:15px;font-weight:800;color:var(--navy);margin-top:0}.page-insuficiencia .hemo-title p.desc{font-size:9.8px;line-height:1.35;color:#2f3e58;text-align:justify;margin:6px auto 0;max-width:790px}
+.page-insuficiencia .body-diagram{max-width:900px;margin:10px auto 0;padding:0 58px;display:grid;grid-template-columns:160px 1fr 235px;gap:8px;align-items:start}.page-insuficiencia .diagram-col h4,.page-insuficiencia .diagram-right-box h4{font-size:8.8px;font-weight:900;color:var(--navy);text-transform:uppercase;margin-bottom:3px}.page-insuficiencia .diagram-col p,.page-insuficiencia .diagram-right-box p{font-size:7.5px;line-height:1.2;color:#26344e}.page-insuficiencia .diagram-col .img-ph{border:0;background:#fff;height:55px!important;margin-top:6px!important}.page-insuficiencia .diagram-center-ph{height:205px;border:2px solid #8194b0;background:#fff}.page-insuficiencia .diagram-right-ph{height:61px;border:2px solid #8194b0;background:#fff;margin-bottom:6px}.page-insuficiencia .diagram-right-box{border:1.5px solid #8194b0;background:#fff;padding:6px;margin-bottom:6px}.page-insuficiencia .diagram-right-box[style*="orange"],.page-insuficiencia .diagram-right-box:last-child{border-color:var(--orange)!important}
+.page-insuficiencia .video-sec{max-width:900px;margin:90px auto 70px;padding:0 86px;display:grid;grid-template-columns:1fr 260px;gap:45px;align-items:center}.page-insuficiencia .video-text{text-align:center}.page-insuficiencia .video-text h2{font-size:15px;line-height:1.05;color:var(--blue);font-weight:900}.page-insuficiencia .video-text h2 span{color:var(--orange)}.page-insuficiencia .video-text p{font-size:7.9px;line-height:1.28;color:#33405a;text-align:center;margin-top:5px}.page-insuficiencia .video-placeholder{height:230px;border:0;border-radius:10px;background:#243978}.page-insuficiencia .play-btn{width:70px;height:48px;border:4px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center}.page-insuficiencia .play-btn svg{width:27px;height:27px;fill:#fff;margin-left:4px}
+
+.site-footer{background:var(--navy);color:rgba(255,255,255,.65);display:flex;justify-content:space-between;gap:15px;padding:16px 50px;font-size:10px}.site-footer p{font-size:10px}
+
+/* ---------- responsive: mantiene diseño, pero se acomoda en celular ---------- */
+@media(max-width:800px){
+  .tabs-nav{height:auto;display:grid;grid-template-columns:1fr 1fr}.tabs-nav a{white-space:normal;min-height:34px;font-size:8px}
+  .logo-bar{height:auto;margin:0;padding:10px 16px;flex-wrap:wrap}.logo-divider{display:none}.logo-program{font-size:8.5px}.logo-block{min-width:auto}.logo-icon{width:38px;height:38px}.logo-icon svg{width:38px;height:38px}
+  .page-viviendo .hero,.page-dialisis .hero,.page-insuficiencia .hero{margin-top:0;padding:38px 22px;min-height:220px}.page-viviendo .hero-content{width:100%;max-width:100%}.page-viviendo .hero h1 .line1,.page-dialisis .hero-title .l1,.page-insuficiencia .hero-title .l1{font-size:24px}.page-viviendo .hero h1 .line2,.page-dialisis .hero-title .l2,.page-insuficiencia .hero-title .l2{font-size:27px}.page-viviendo .hero-tagline,.page-viviendo .hero-cta{margin-left:0}.page-viviendo .hero-icons{position:relative;right:auto;top:auto;margin-top:16px;width:max-content}
+  .page-viviendo .about-strip,.page-viviendo .about-content,.page-viviendo .quote-section,.page-viviendo .kidney-section,.page-viviendo .filter-section,.page-viviendo .erc-cta,.page-viviendo .mv-section,
+  .page-dialisis .trat-section,.page-dialisis .etapa5-q,.page-dialisis .stages-text,.page-dialisis .dialisis-icon,.page-dialisis .etapa5-big,.page-dialisis .que-dialisis,.page-dialisis .dialisis-hoy,.page-dialisis .hvp-section,.page-dialisis .nuevo,.page-dialisis .tips-section,.page-dialisis .no-solo,
+  .page-insuficiencia .rinon-sec,.page-insuficiencia .body-text,.page-insuficiencia .hemo-title,.page-insuficiencia .body-diagram,.page-insuficiencia .video-sec{padding-left:18px;padding-right:18px;display:block;margin-top:28px}
+  .page-viviendo .kidney-section,.page-viviendo .mv-grid,.page-dialisis .dialisis-hoy,.page-dialisis .hvp-cols,.page-dialisis .nuevo-grid,.page-dialisis .tips-grid,.page-insuficiencia .rinon-sec,.page-insuficiencia .body-diagram,.page-insuficiencia .video-sec{grid-template-columns:1fr;display:grid;gap:18px}
+  .page-viviendo .filter-box{width:100%}.page-viviendo .filter-note{position:static;width:auto;margin-top:10px}.page-viviendo .erc-cta{flex-direction:column}.page-viviendo .mv-grid{gap:22px}
+  .page-dialisis .etapa5-q,.page-dialisis .que-dialisis,.page-dialisis .etapa5-big,.page-dialisis .dialisis-icon{grid-template-columns:1fr}.page-dialisis .dialisis-hoy-title{text-align:center}.page-dialisis .icons-flow{flex-wrap:wrap}.page-insuficiencia .video-sec{margin-bottom:35px}.site-footer{display:block;text-align:center;line-height:1.6}
+}
