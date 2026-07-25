@@ -399,3 +399,39 @@ body{
     transform:none;
   }
 }
+.hotspot{
+  position:absolute;
+  z-index:5;
+  display:block;
+  text-decoration:none;
+  cursor:pointer;
+  border-radius:6px;
+  transition:all .25s ease;
+}
+
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+.pdf-page{
+  position:relative;
+  width:100%;
+  max-width:1920px;
+  margin:0 auto;
+  background:#fff;
+  overflow:hidden;
+}
+
+.page-art{
+  display:block;
+  width:100%;
+  height:auto;
+}
