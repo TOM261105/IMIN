@@ -1,21 +1,401 @@
 /* =====================================================
-   IMIN - versión pixel-perfect basada en los PDF
-   IMPORTANTE: no edites el tamaño de .pdf-page si quieres que
-   conserve la misma proporción del documento original.
+   IMIN / Viviendo ERC
+   Versión exacta al PDF usando imágenes exportadas.
+   Los textos NO son editables porque viven dentro de la imagen,
+   pero los menús y botones sí son HTML reales con hover.
    ===================================================== */
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{width:100%;min-height:100%;background:#fff;font-family:Arial,sans-serif}
-body{overflow-x:hidden}
-.pdf-wrap{width:100%;max-width:1920px;margin:0 auto;position:relative;background:#fff;line-height:0}
-.pdf-page{width:100%;height:auto;display:block;user-select:none;-webkit-user-drag:none}
 
-/* Links invisibles sobre el menú del PDF */
-.hotspots{position:absolute;left:0;top:0;width:100%;height:1.1%;z-index:10;display:grid;grid-template-columns:repeat(7,1fr)}
-.hotspots a{display:block;text-indent:-9999px;overflow:hidden;background:transparent}
-.hotspots a:hover{background:rgba(255,255,255,.08)}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-/* En celular conserva la proporción y permite ver todo el ancho */
+html{
+  scroll-behavior:smooth;
+  background:#fff;
+}
+
+body{
+  margin:0;
+  background:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#162f62;
+}
+
+/* Contenedor general */
+.pdf-page{
+  position:relative;
+  width:100%;
+  max-width:1920px;
+  margin:0 auto;
+  background:#fff;
+  overflow:hidden;
+}
+
+/* Imagen principal de cada página */
+.pdf-page img.page-art{
+  display:block;
+  width:100%;
+  height:auto;
+  user-select:none;
+  -webkit-user-drag:none;
+}
+
+/* Links invisibles colocados encima del PDF */
+.hotspot{
+  position:absolute;
+  z-index:5;
+  display:block;
+  text-decoration:none;
+  cursor:pointer;
+  border-radius:6px;
+  transition:
+    background-color .22s ease,
+    box-shadow .22s ease,
+    transform .22s ease,
+    backdrop-filter .22s ease;
+}
+
+/* Hover general: se ve elegante sin tapar el diseño */
+.hotspot:hover{
+  background:rgba(255,255,255,.16);
+  box-shadow:0 0 18px rgba(255,255,255,.32);
+  backdrop-filter:blur(1px);
+}
+
+/* Hotspots del menú superior */
+.nav-hotspot{
+  top:0;
+  height:2.25%;
+  border-radius:0;
+}
+
+.nav-hotspot:hover{
+  background:rgba(22,47,98,.12);
+  box-shadow:inset 0 -2px 0 rgba(22,47,98,.45);
+}
+
+.nav-1{left:0%;width:14.2857%;}
+.nav-2{left:14.2857%;width:14.2857%;}
+.nav-3{left:28.5714%;width:14.2857%;}
+.nav-4{left:42.8571%;width:14.2857%;}
+.nav-5{left:57.1428%;width:14.2857%;}
+.nav-6{left:71.4285%;width:14.2857%;}
+.nav-7{left:85.7142%;width:14.2858%;}
+
+/* Botón Conoce tu etapa en WEB1 */
+.cta-etapa{
+  left:39.5%;
+  top:16.25%;
+  width:12.2%;
+  height:1.75%;
+  border-radius:10px;
+}
+
+.cta-etapa:hover{
+  background:rgba(255,255,255,.28);
+  box-shadow:0 0 22px rgba(255,255,255,.55), 0 6px 18px rgba(0,0,0,.22);
+  transform:scale(1.04);
+}
+
+/* Caja de iconos informativos en WEB1 */
+.info-card-link{
+  left:70.5%;
+  top:13.1%;
+  width:18.2%;
+  height:4.9%;
+  border-radius:14px;
+}
+
+/* Imagen/riñón de WEB1: pequeño efecto al pasar */
+.kidney-link{
+  left:57.3%;
+  top:42%;
+  width:33.5%;
+  height:15.5%;
+  border-radius:18px;
+}
+
+.kidney-link:hover{
+  background:rgba(255,255,255,.08);
+  box-shadow:0 0 26px rgba(22,47,98,.18);
+}
+
+/* Infografía WEB1 */
+.filter-link{
+  left:0%;
+  top:59.25%;
+  width:55%;
+  height:13.2%;
+  border-radius:0;
+}
+
+/* Hotspots destacados WEB2 */
+.web2-etapas{
+  left:20.8%;
+  top:27.8%;
+  width:57.5%;
+  height:5.9%;
+}
+
+.web2-hvp{
+  left:28.4%;
+  top:58.5%;
+  width:63.2%;
+  height:15.3%;
+}
+
+.web2-tips{
+  left:31.6%;
+  top:79.4%;
+  width:61.8%;
+  height:14%;
+}
+
+/* Hotspots destacados WEB3 */
+.web3-diagram{
+  left:6.5%;
+  top:29.8%;
+  width:74%;
+  height:21.7%;
+}
+
+.web3-video{
+  left:63.7%;
+  top:54.2%;
+  width:28.1%;
+  height:18.1%;
+  border-radius:22px;
+}
+
+.web3-video:hover{
+  background:rgba(255,255,255,.16);
+  box-shadow:0 0 28px rgba(22,47,98,.38), 0 8px 22px rgba(0,0,0,.25);
+  transform:scale(1.025);
+}
+
+/* Accesibilidad: texto oculto solo para lectores de pantalla */
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+/* En pantallas muy grandes, la página no se estira infinito */
+@media(min-width:1921px){
+  body{
+    background:#f8f8f8;
+  }
+  .pdf-page{
+    box-shadow:0 0 28px rgba(0,0,0,.08);
+  }
+}
+
+/* Celular: conserva proporción del PDF y permite scroll vertical natural */
 @media(max-width:700px){
-  .pdf-wrap{max-width:none;width:100%}
-  .hotspots{height:1.4%}
+  .nav-hotspot{
+    height:2.4%;
+  }
+
+  .hotspot:hover{
+    transform:none;
+  }
+}
+
+/* =====================================================
+   EFECTOS DINÁMICOS PARA BOTONES / HOTSPOTS
+   Pega este bloque al final del style.css si no reemplazas el archivo completo.
+   ===================================================== */
+
+.hotspot{
+  isolation:isolate;
+  overflow:hidden;
+  outline:none;
+}
+
+.hotspot::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  border:1px solid transparent;
+  opacity:0;
+  transform:scale(.96);
+  transition:opacity .25s ease, transform .25s ease, border-color .25s ease;
+  pointer-events:none;
+}
+
+.hotspot::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-80%;
+  width:45%;
+  height:100%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent);
+  transform:skewX(-18deg);
+  opacity:0;
+  transition:left .55s ease, opacity .25s ease;
+  pointer-events:none;
+}
+
+.hotspot:hover::before,
+.hotspot:focus-visible::before{
+  opacity:1;
+  transform:scale(1);
+  border-color:rgba(255,255,255,.55);
+}
+
+.hotspot:hover::after,
+.hotspot:focus-visible::after{
+  left:130%;
+  opacity:1;
+}
+
+.hotspot:focus-visible{
+  box-shadow:0 0 0 3px rgba(232,137,12,.8), 0 0 24px rgba(22,47,98,.35);
+}
+
+/* Menú superior: efecto limpio tipo barra activa */
+.nav-hotspot{
+  transition:background .25s ease, box-shadow .25s ease;
+}
+
+.nav-hotspot::before{
+  border:none;
+  border-radius:0;
+  border-bottom:3px solid var(--navy, #162f62);
+  transform:scaleX(0);
+  transform-origin:center;
+}
+
+.nav-hotspot:hover,
+.nav-hotspot:focus-visible{
+  background:rgba(22,47,98,.10);
+  box-shadow:inset 0 -3px 0 rgba(22,47,98,.25);
+}
+
+.nav-hotspot:hover::before,
+.nav-hotspot:focus-visible::before{
+  transform:scaleX(1);
+  opacity:1;
+}
+
+/* Botón principal “Conoce tu etapa”: glow + levantamiento */
+.cta-etapa{
+  animation:pulseCta 2.8s ease-in-out infinite;
+}
+
+.cta-etapa:hover,
+.cta-etapa:focus-visible{
+  background:rgba(255,255,255,.34);
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,.65),
+    0 0 28px rgba(255,255,255,.75),
+    0 10px 24px rgba(0,0,0,.30);
+  transform:translateY(-2px) scale(1.06);
+}
+
+/* Tarjeta de iconos del hero */
+.info-card-link:hover,
+.info-card-link:focus-visible{
+  background:rgba(255,255,255,.13);
+  box-shadow:0 0 24px rgba(255,255,255,.35), inset 0 0 0 1px rgba(255,255,255,.25);
+  transform:translateY(-2px);
+}
+
+/* Zonas informativas: sombra suave azul */
+.kidney-link:hover,
+.filter-link:hover,
+.web2-etapas:hover,
+.web2-hvp:hover,
+.web2-tips:hover,
+.web3-diagram:hover,
+.kidney-link:focus-visible,
+.filter-link:focus-visible,
+.web2-etapas:focus-visible,
+.web2-hvp:focus-visible,
+.web2-tips:focus-visible,
+.web3-diagram:focus-visible{
+  background:rgba(255,255,255,.10);
+  box-shadow:
+    0 0 0 2px rgba(22,47,98,.16),
+    0 12px 32px rgba(22,47,98,.20);
+  transform:scale(1.012);
+}
+
+/* Video: efecto de play más claro */
+.web3-video:hover,
+.web3-video:focus-visible{
+  background:rgba(255,255,255,.12);
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,.35),
+    0 0 34px rgba(22,47,98,.55),
+    0 12px 28px rgba(0,0,0,.28);
+  transform:translateY(-3px) scale(1.035);
+}
+
+/* Etiqueta opcional al pasar el cursor */
+.cta-etapa:hover .sr-only,
+.web3-video:hover .sr-only,
+.web2-etapas:hover .sr-only,
+.web2-hvp:hover .sr-only,
+.web2-tips:hover .sr-only,
+.filter-link:hover .sr-only,
+.kidney-link:hover .sr-only{
+  position:absolute;
+  width:auto;
+  height:auto;
+  clip:auto;
+  white-space:nowrap;
+  overflow:visible;
+  left:50%;
+  bottom:calc(100% + 8px);
+  transform:translateX(-50%);
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(22,47,98,.94);
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  box-shadow:0 8px 18px rgba(0,0,0,.24);
+  z-index:20;
+}
+
+@keyframes pulseCta{
+  0%,100%{
+    box-shadow:0 0 0 rgba(255,255,255,0);
+  }
+  50%{
+    box-shadow:0 0 18px rgba(255,255,255,.38);
+  }
+}
+
+@media(max-width:700px){
+  .hotspot::after,
+  .hotspot:hover .sr-only{
+    display:none;
+  }
+
+  .cta-etapa{
+    animation:none;
+  }
+
+  .cta-etapa:hover,
+  .web3-video:hover,
+  .kidney-link:hover,
+  .filter-link:hover,
+  .web2-etapas:hover,
+  .web2-hvp:hover,
+  .web2-tips:hover,
+  .web3-diagram:hover{
+    transform:none;
+  }
 }
