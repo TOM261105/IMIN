@@ -132,20 +132,20 @@ body{
    ===================================================== */
 
 .nav-hotspot{
-  top:0.2%;
-  border-radius:12px 12px 0 0;
+  top:0.55%;
+  border-radius:10px 10px 0 0;
   transition:background .25s ease, box-shadow .25s ease, transform .2s ease;
 }
 
 /* WEB1 */
 .page-web1 .nav-hotspot{
-  height:1.44%;
+  height:1.85%;
 }
 
 /* WEB2 y WEB3 */
 .page-web2 .nav-hotspot,
 .page-web3 .nav-hotspot{
-  height:1.44%;
+  height:1.05%;
 }
 
 /* Posiciones horizontales reales del menú del diseño */
@@ -186,7 +186,7 @@ body{
 
 /* Botón "Conoce tu etapa" */
 .cta-etapa{
-  left:40%;
+  left:35%;
   top:16.50%;
   width:13%;
   height:1.18%;
