@@ -132,14 +132,14 @@ body{
    ===================================================== */
 
 .nav-hotspot{
-  top:0.55%;
+  top:0.78%;
   border-radius:10px 10px 0 0;
   transition:background .25s ease, box-shadow .25s ease, transform .2s ease;
 }
 
 /* WEB1 */
 .page-web1 .nav-hotspot{
-  height:1.85%;
+  height:1.45%;
 }
 
 /* WEB2 y WEB3 */
@@ -186,8 +186,8 @@ body{
 
 /* Botón "Conoce tu etapa" */
 .cta-etapa{
-  left:35%;
-  top:16.50%;
+  left:30%;
+  top:16.00%;
   width:13%;
   height:1.18%;
   border-radius:8px;
