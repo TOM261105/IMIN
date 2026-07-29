@@ -139,7 +139,8 @@ body{
 
 /* WEB1 */
 .page-web1 .nav-hotspot{
-  height:1.45%;
+  top:0.42%;
+  height:1.05%;
 }
 
 /* WEB2 y WEB3 */
@@ -188,7 +189,7 @@ body{
 .cta-etapa{
   left:32.5%;
   top:16.00%;
-  width:13%;
+  width:11.5%;
   height:1.18%;
   border-radius:8px;
   animation:pulseCta 2.8s ease-in-out infinite;
