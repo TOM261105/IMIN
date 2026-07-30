@@ -139,7 +139,7 @@ body{
 /* Página principal: solo aquí más alto */
 .page-web1 .nav-hotspot{
   top:1.18%;
-  height:1.725%;
+  height:1.70%;
 }
 
 /* WEB2 y WEB3 se quedan como están */
@@ -278,11 +278,11 @@ body{
 
 /* Botón "Conoce tu etapa" */
 .cta-etapa{
-  left:33.25%;
-  top:16.05%;
-  width:10.1%;
-  height:1.05%;
-  border-radius:12px;
+  left:35.55%;
+  top:16.55%;
+  width:9.45%;
+  height:1.02%;
+  border-radius:14px;
   animation:pulseCta 2.8s ease-in-out infinite;
 }
 
