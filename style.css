@@ -76,6 +76,33 @@ body{
   border:0;
 }
 
+/* Texto visible SOLO al hacer hover en los botones del menú */
+.nav-hotspot:hover .sr-only,
+.nav-hotspot:focus-visible .sr-only{
+  position:absolute;
+  width:auto;
+  height:auto;
+  clip:auto;
+  margin:0;
+  padding:0 8px;
+  overflow:visible;
+  white-space:nowrap;
+  border:0;
+
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+
+  color:#fff;
+  font-size:13px;
+  font-weight:800;
+  line-height:1;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:.2px;
+  z-index:10;
+}
+
 /* Hover general */
 .hotspot:hover{
   background:rgba(255,255,255,.16);
@@ -132,14 +159,14 @@ body{
 
 .nav-hotspot{
   top:0.80%;
-  border-radius:10px 10px 0 0;
+  border-radius:18px 18px 0 0;
   transition:background .25s ease;
 }
 
 /* WEB1 */
 .page-web1 .nav-hotspot{
-  top:0.82%;
-  height:1.5%;
+  top:1.05%;
+  height:1.35%;
 }
 
 /* WEB2 y WEB3 */
@@ -149,13 +176,13 @@ body{
 }
 
 /* Posiciones horizontales reales del menú */
-.nav-1{left:0%;       width:18.0%;}
-.nav-2{left:18.0%;    width:18.6%;}
-.nav-3{left:36.6%;    width:19.4%;}
-.nav-4{left:56.0%;    width:11.5%;}
-.nav-5{left:67.5%;    width:6.4%;}
-.nav-6{left:73.9%;    width:7.5%;}
-.nav-7{left:81.4%;    width:9.0%;}
+.nav-1{left:0.4%;     width:17.2%;}
+.nav-2{left:18.4%;    width:17.8%;}
+.nav-3{left:37.0%;    width:18.6%;}
+.nav-4{left:56.4%;    width:10.7%;}
+.nav-5{left:67.9%;    width:5.8%;}
+.nav-6{left:74.3%;    width:6.8%;}
+.nav-7{left:81.8%;    width:8.3%;}
 
 /* Hover azul marino sólido para menú */
 .nav-hotspot:hover,
@@ -164,12 +191,13 @@ body{
   box-shadow:none;
   transform:none;
   backdrop-filter:none;
+  overflow:visible;
 }
 
 /* Quita línea extra del menú */
 .nav-hotspot::before{
   border:none;
-  border-radius:10px 10px 0 0;
+  border-radius:18px 18px 0 0;
   transform:scaleX(0);
   transform-origin:center;
 }
