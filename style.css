@@ -292,9 +292,9 @@ body{
   background:#162f62;
   box-shadow:
     0 0 0 1px rgba(255,255,255,.55),
-    0 0 16px rgba(255,255,255,.45),
-    0 6px 16px rgba(0,0,0,.22);
-  transform:scale(1.02);
+    0 0 14px rgba(255,255,255,.40),
+    0 5px 14px rgba(0,0,0,.20);
+  transform:scale(1.015);
   backdrop-filter:none;
   overflow:hidden;
 }
