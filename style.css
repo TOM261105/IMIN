@@ -278,11 +278,11 @@ body{
 
 /* Botón "Conoce tu etapa" */
 .cta-etapa{
-  left:35.55%;
-  top:16.55%;
-  width:9.45%;
-  height:1.02%;
-  border-radius:14px;
+  left:34.15%;
+  top:16.42%;
+  width:11.75%;
+  height:1.28%;
+  border-radius:16px;
   animation:pulseCta 2.8s ease-in-out infinite;
 }
 
@@ -291,9 +291,9 @@ body{
 .cta-etapa:focus-visible{
   background:#162f62;
   box-shadow:
-    0 0 0 1px rgba(255,255,255,.55),
-    0 0 14px rgba(255,255,255,.40),
-    0 5px 14px rgba(0,0,0,.20);
+    0 0 0 1px rgba(255,255,255,.60),
+    0 0 16px rgba(255,255,255,.42),
+    0 6px 16px rgba(0,0,0,.22);
   transform:scale(1.015);
   backdrop-filter:none;
   overflow:hidden;
@@ -306,7 +306,7 @@ body{
   height:auto;
   clip:auto;
   margin:0;
-  padding:0 6px;
+  padding:0 8px;
   overflow:visible;
   white-space:nowrap;
   border:0;
@@ -322,7 +322,6 @@ body{
   text-align:center;
   z-index:10;
 }
-
 /* Tarjeta de iconos del hero */
 .info-card-link{
   left:70.2%;
