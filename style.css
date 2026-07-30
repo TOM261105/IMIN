@@ -1,44 +1,48 @@
 /* FUENTES DEL DISEÑO */
 @font-face{
-  font-family:'Raleway';
+  font-family:'RalewayIMIN';
   src:url('assets/fonts/Raleway-Regular.ttf') format('truetype');
   font-weight:400;
   font-style:normal;
+  font-display:swap;
 }
 
 @font-face{
-  font-family:'Raleway';
+  font-family:'RalewayIMIN';
   src:url('assets/fonts/Raleway-Medium.ttf') format('truetype');
   font-weight:500;
   font-style:normal;
+  font-display:swap;
 }
 
 @font-face{
-  font-family:'Raleway';
+  font-family:'RalewayIMIN';
   src:url('assets/fonts/Raleway-ExtraBold.ttf') format('truetype');
   font-weight:800;
   font-style:normal;
+  font-display:swap;
 }
 
 @font-face{
-  font-family:'Raleway';
+  font-family:'RalewayIMIN';
   src:url('assets/fonts/Raleway-Heavy_2.ttf') format('truetype');
   font-weight:900;
   font-style:normal;
+  font-display:swap;
 }
 
 @font-face{
-  font-family:'Source Sans';
+  font-family:'SourceSansIMIN';
   src:url('assets/fonts/SourceSansVariable-Roman.otf') format('opentype');
   font-weight:400 900;
   font-style:normal;
+  font-display:swap;
 }
 
 /* =====================================================
    IMIN / Viviendo ERC
    Versión exacta al PDF usando imágenes exportadas.
    Textos como imagen, botones HTML reales encima con hover.
-   Hotspots corregidos para que caigan sobre el PDF.
    ===================================================== */
 
 :root{
@@ -60,8 +64,9 @@ html{
 body{
   margin:0;
   background:#fff;
-  font-family:'Raleway', Arial, Helvetica, sans-serif;
+  font-family:'RalewayIMIN', Arial, Helvetica, sans-serif;
   color:var(--navy);
+  font-synthesis:none;
 }
 
 .pdf-page{
@@ -97,7 +102,7 @@ body{
   isolation:isolate;
   overflow:hidden;
   outline:none;
-  font-family:'Raleway', Arial, Helvetica, sans-serif;
+  font-family:'RalewayIMIN', Arial, Helvetica, sans-serif;
 }
 
 /* Texto oculto para que no aparezca como link morado */
@@ -113,7 +118,7 @@ body{
   border:0;
 }
 
-/* Hover general para zonas que NO son menú */
+/* Hover general */
 .hotspot:hover{
   background:rgba(255,255,255,.16);
   box-shadow:0 0 18px rgba(255,255,255,.32);
@@ -173,13 +178,13 @@ body{
   transition:background .25s ease;
 }
 
-/* Página principal: solo aquí más alto */
+/* Página principal: ajuste especial */
 .page-web1 .nav-hotspot{
   top:1.18%;
   height:1.60%;
 }
 
-/* WEB2 y WEB3 se quedan como están */
+/* WEB2 y WEB3 */
 .page-web2 .nav-hotspot,
 .page-web3 .nav-hotspot{
   top:0.80%;
@@ -272,13 +277,13 @@ body{
   transform:translate(-50%, -50%);
 
   color:#fff;
-  font-family:'Raleway', Arial, Helvetica, sans-serif;
+  font-family:'RalewayIMIN', Arial, Helvetica, sans-serif;
   font-size:11px;
-  font-weight:900;
+  font-weight:800;
   line-height:1;
   text-align:center;
   text-transform:uppercase;
-  letter-spacing:.2px;
+  letter-spacing:.15px;
   z-index:10;
 }
 
@@ -301,13 +306,13 @@ body{
   transform:translate(-50%, -50%);
 
   color:#fff;
-  font-family:'Raleway', Arial, Helvetica, sans-serif;
+  font-family:'RalewayIMIN', Arial, Helvetica, sans-serif;
   font-size:11px;
-  font-weight:900;
+  font-weight:800;
   line-height:1;
   text-align:center;
   text-transform:uppercase;
-  letter-spacing:.2px;
+  letter-spacing:.15px;
   z-index:10;
 }
 
@@ -355,84 +360,18 @@ body{
   transform:translate(-50%, -50%);
 
   color:#fff;
-  font-family:'Raleway', Arial, Helvetica, sans-serif;
+  font-family:'RalewayIMIN', Arial, Helvetica, sans-serif;
   font-size:12px;
-  font-weight:900;
+  font-weight:800;
   line-height:1;
   text-align:center;
+  letter-spacing:.1px;
   z-index:10;
 }
 
-/* Tarjeta de iconos del hero */
-.info-card-link{
-  left:70.2%;
-  top:13.5%;
-  width:18%;
-  height:4.9%;
-  border-radius:14px;
-}
-
-/* Imagen riñones */
-.kidney-link{
-  left:57.2%;
-  top:41.9%;
-  width:34.0%;
-  height:15.7%;
-  border-radius:18px;
-}
-
-/* Infografía filtro */
-.filter-link{
-  left:0%;
-  top:58.7%;
-  width:55.2%;
-  height:13.3%;
-  border-radius:0;
-}
-
 /* =====================================================
-   WEB2 / DIÁLISIS AL DESCUBIERTO
+   WEB3 / VIDEO
    ===================================================== */
-
-/* Infografía etapas */
-.web2-etapas{
-  left:20.8%;
-  top:28.1%;
-  width:57.5%;
-  height:5.8%;
-  border-radius:10px;
-}
-
-/* Hemodiálisis vs diálisis peritoneal */
-.web2-hvp{
-  left:28.2%;
-  top:60.8%;
-  width:63.8%;
-  height:13.0%;
-  border-radius:10px;
-}
-
-/* Tips / retos */
-.web2-tips{
-  left:22.0%;
-  top:78.3%;
-  width:71.8%;
-  height:14.7%;
-  border-radius:10px;
-}
-
-/* =====================================================
-   WEB3 / INSUFICIENCIA RENAL & DIÁLISIS
-   ===================================================== */
-
-/* Diagrama cuerpo/hemodiálisis */
-.web3-diagram{
-  left:6.3%;
-  top:29.4%;
-  width:75.0%;
-  height:22.7%;
-  border-radius:10px;
-}
 
 /* Video */
 .web3-video{
@@ -469,7 +408,7 @@ body{
   border-radius:999px;
   background:rgba(22,47,98,.94);
   color:#fff;
-  font-family:'Raleway', Arial, Helvetica, sans-serif;
+  font-family:'RalewayIMIN', Arial, Helvetica, sans-serif;
   font-size:11px;
   font-weight:700;
   box-shadow:0 8px 18px rgba(0,0,0,.24);
@@ -491,12 +430,13 @@ body{
   pointer-events:none !important;
 }
 
-/* Si NO quieres que el video tenga hover, descomenta este bloque */
-/*
+/* Si tampoco quieres que el video tenga botón, agrega esto:
+
 .web3-video{
   display:none !important;
   pointer-events:none !important;
 }
+
 */
 
 @keyframes pulseCta{
