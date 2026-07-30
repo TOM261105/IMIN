@@ -136,13 +136,13 @@ body{
   transition:background .25s ease;
 }
 
-/* Página principal: ajuste especial para que quede igual que las otras */
+/* Página principal: solo aquí más alto */
 .page-web1 .nav-hotspot{
   top:1.18%;
-  height:1.28%;
+  height:1.75%;
 }
 
-/* WEB2 y WEB3 */
+/* WEB2 y WEB3 se quedan como están */
 .page-web2 .nav-hotspot,
 .page-web3 .nav-hotspot{
   top:0.80%;
@@ -195,6 +195,16 @@ body{
   overflow:hidden;
 }
 
+/* Botón activo según la página */
+.page-web1 .nav-7,
+.page-web2 .nav-1,
+.page-web3 .nav-2{
+  background:#162f62;
+  box-shadow:none;
+  backdrop-filter:none;
+  overflow:hidden;
+}
+
 /* Quita borde/línea extra del menú */
 .nav-hotspot::before{
   border:none;
@@ -210,6 +220,34 @@ body{
 /* Texto visible SOLO al hacer hover en menú */
 .nav-hotspot:hover .sr-only,
 .nav-hotspot:focus-visible .sr-only{
+  position:absolute;
+  width:auto;
+  height:auto;
+  clip:auto;
+  margin:0;
+  padding:0 6px;
+  overflow:visible;
+  white-space:nowrap;
+  border:0;
+
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+  line-height:1;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:.1px;
+  z-index:10;
+}
+
+/* Texto visible en el botón activo */
+.page-web1 .nav-7 .sr-only,
+.page-web2 .nav-1 .sr-only,
+.page-web3 .nav-2 .sr-only{
   position:absolute;
   width:auto;
   height:auto;
