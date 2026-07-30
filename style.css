@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap');
+
 /* =====================================================
    IMIN / Viviendo ERC
    Versión exacta al PDF usando imágenes exportadas.
@@ -24,7 +26,7 @@ html{
 body{
   margin:0;
   background:#fff;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:'Montserrat', Arial, Helvetica, sans-serif;
   color:var(--navy);
 }
 
@@ -61,6 +63,7 @@ body{
   isolation:isolate;
   overflow:hidden;
   outline:none;
+  font-family:'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 /* Texto oculto para que no aparezca como link morado */
@@ -235,6 +238,7 @@ body{
   transform:translate(-50%, -50%);
 
   color:#fff;
+  font-family:'Montserrat', Arial, Helvetica, sans-serif;
   font-size:11px;
   font-weight:800;
   line-height:1;
@@ -263,6 +267,7 @@ body{
   transform:translate(-50%, -50%);
 
   color:#fff;
+  font-family:'Montserrat', Arial, Helvetica, sans-serif;
   font-size:11px;
   font-weight:800;
   line-height:1;
@@ -316,12 +321,14 @@ body{
   transform:translate(-50%, -50%);
 
   color:#fff;
+  font-family:'Montserrat', Arial, Helvetica, sans-serif;
   font-size:12px;
   font-weight:800;
   line-height:1;
   text-align:center;
   z-index:10;
 }
+
 /* Tarjeta de iconos del hero */
 .info-card-link{
   left:70.2%;
@@ -459,6 +466,7 @@ body{
   border-radius:999px;
   background:rgba(22,47,98,.94);
   color:#fff;
+  font-family:'Montserrat', Arial, Helvetica, sans-serif;
   font-size:11px;
   font-weight:700;
   box-shadow:0 8px 18px rgba(0,0,0,.24);
