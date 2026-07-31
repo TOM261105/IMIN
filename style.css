@@ -1,4 +1,4 @@
-/* FUENTES DEL DISEÑO */
+ /* FUENTES DEL DISEÑO */
 @font-face{
   font-family:'RalewayIMIN';
   src:url('assets/fonts/Raleway-Regular.ttf') format('truetype');
@@ -105,7 +105,7 @@ body{
   font-family:'RalewayIMIN', Arial, Helvetica, sans-serif;
 }
 
-/* Texto oculto para que no aparezca como link morado */
+/* Texto oculto para links normales */
 .sr-only{
   position:absolute;
   width:1px;
@@ -175,7 +175,21 @@ body{
 .nav-hotspot{
   top:0.80%;
   border-radius:18px 18px 0 0;
-  transition:background .25s ease;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#ffffff;
+  box-shadow:none;
+  backdrop-filter:none;
+  overflow:hidden;
+
+  transition:
+    background .25s ease,
+    color .25s ease,
+    box-shadow .25s ease,
+    transform .25s ease;
 }
 
 /* Página principal: ajuste especial */
@@ -184,9 +198,13 @@ body{
   height:1.60%;
 }
 
-/* WEB2 y WEB3 */
+/* WEB2 en adelante */
 .page-web2 .nav-hotspot,
-.page-web3 .nav-hotspot{
+.page-web3 .nav-hotspot,
+.page-web4 .nav-hotspot,
+.page-web5 .nav-hotspot,
+.page-web6 .nav-hotspot,
+.page-web7 .nav-hotspot{
   top:0.80%;
   height:1.07%;
 }
@@ -227,24 +245,93 @@ body{
   width:8.3%;
 }
 
-/* Hover azul marino sólido del menú */
+/* Texto visible SIEMPRE en menú */
+.nav-hotspot .sr-only{
+  position:absolute;
+  width:auto;
+  height:auto;
+  clip:auto;
+  margin:0;
+  padding:0 6px;
+  overflow:visible;
+  white-space:nowrap;
+  border:0;
+
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+
+  color:#162f62;
+  font-family:'RalewayIMIN', Arial, Helvetica, sans-serif;
+  font-size:clamp(7px, .58vw, 12px);
+  font-weight:800;
+  line-height:1;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:-.15px;
+  z-index:10;
+}
+
+/* Hover del menú: colores invertidos */
 .nav-hotspot:hover,
 .nav-hotspot:focus-visible{
   background:#162f62;
-  box-shadow:none;
+  box-shadow:
+    0 6px 16px rgba(0,0,0,.18),
+    inset 0 0 0 1px rgba(255,255,255,.20);
   transform:none;
   backdrop-filter:none;
   overflow:hidden;
 }
 
+.nav-hotspot:hover .sr-only,
+.nav-hotspot:focus-visible .sr-only{
+  color:#ffffff;
+}
+
 /* Botón activo según la página */
 .page-web1 .nav-7,
 .page-web2 .nav-1,
-.page-web3 .nav-2{
+.page-web3 .nav-2,
+.page-web4 .nav-3,
+.page-web5 .nav-4,
+.page-web6 .nav-5,
+.page-web7 .nav-6{
   background:#162f62;
   box-shadow:none;
   backdrop-filter:none;
   overflow:hidden;
+}
+
+.page-web1 .nav-7 .sr-only,
+.page-web2 .nav-1 .sr-only,
+.page-web3 .nav-2 .sr-only,
+.page-web4 .nav-3 .sr-only,
+.page-web5 .nav-4 .sr-only,
+.page-web6 .nav-5 .sr-only,
+.page-web7 .nav-6 .sr-only{
+  color:#ffffff;
+}
+
+/* Cuando pasas sobre el activo, se mantiene igual */
+.page-web1 .nav-7:hover,
+.page-web2 .nav-1:hover,
+.page-web3 .nav-2:hover,
+.page-web4 .nav-3:hover,
+.page-web5 .nav-4:hover,
+.page-web6 .nav-5:hover,
+.page-web7 .nav-6:hover{
+  background:#162f62;
+}
+
+.page-web1 .nav-7:hover .sr-only,
+.page-web2 .nav-1:hover .sr-only,
+.page-web3 .nav-2:hover .sr-only,
+.page-web4 .nav-3:hover .sr-only,
+.page-web5 .nav-4:hover .sr-only,
+.page-web6 .nav-5:hover .sr-only,
+.page-web7 .nav-6:hover .sr-only{
+  color:#ffffff;
 }
 
 /* Quita borde/línea extra del menú */
@@ -259,61 +346,19 @@ body{
   background:linear-gradient(120deg, transparent, rgba(255,255,255,.22), transparent);
 }
 
-/* Texto visible SOLO al hacer hover en menú */
-.nav-hotspot:hover .sr-only,
-.nav-hotspot:focus-visible .sr-only{
-  position:absolute;
-  width:auto;
-  height:auto;
-  clip:auto;
-  margin:0;
-  padding:0 6px;
-  overflow:visible;
-  white-space:nowrap;
-  border:0;
-
-  left:50%;
-  top:50%;
-  transform:translate(-50%, -50%);
-
-  color:#fff;
-  font-family:'RalewayIMIN', Arial, Helvetica, sans-serif;
-  font-size:11px;
-  font-weight:800;
-  line-height:1;
-  text-align:center;
-  text-transform:uppercase;
-  letter-spacing:.15px;
-  z-index:10;
+/* Ajuste para textos largos */
+.nav-1 .sr-only,
+.nav-2 .sr-only,
+.nav-3 .sr-only{
+  font-size:clamp(6.5px, .54vw, 11px);
+  letter-spacing:-.25px;
 }
 
-/* Texto visible en el botón activo */
-.page-web1 .nav-7 .sr-only,
-.page-web2 .nav-1 .sr-only,
-.page-web3 .nav-2 .sr-only{
-  position:absolute;
-  width:auto;
-  height:auto;
-  clip:auto;
-  margin:0;
-  padding:0 6px;
-  overflow:visible;
-  white-space:nowrap;
-  border:0;
-
-  left:50%;
-  top:50%;
-  transform:translate(-50%, -50%);
-
-  color:#fff;
-  font-family:'RalewayIMIN', Arial, Helvetica, sans-serif;
-  font-size:11px;
-  font-weight:800;
-  line-height:1;
-  text-align:center;
-  text-transform:uppercase;
-  letter-spacing:.15px;
-  z-index:10;
+.nav-4 .sr-only,
+.nav-5 .sr-only,
+.nav-6 .sr-only,
+.nav-7 .sr-only{
+  font-size:clamp(7px, .58vw, 12px);
 }
 
 /* =====================================================
@@ -519,8 +564,7 @@ body{
 
 /* Celular: conserva proporción del PDF y permite scroll vertical natural */
 @media(max-width:700px){
-  .hotspot::after,
-  .hotspot:hover .sr-only{
+  .hotspot::after{
     display:none;
   }
 
@@ -533,6 +577,15 @@ body{
   .cta-etapa:focus-visible .sr-only{
     display:block;
     font-size:clamp(9px, 2.4vw, 14px);
+  }
+
+  .nav-hotspot .sr-only,
+  .nav-hotspot:hover .sr-only,
+  .nav-hotspot:focus-visible .sr-only{
+    display:block;
+    font-size:clamp(4.5px, 1.35vw, 8px);
+    padding:0 3px;
+    letter-spacing:-.25px;
   }
 
   .hotspot:hover,
