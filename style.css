@@ -531,47 +531,6 @@ body{
   transform:scale(1);
 }
 
-/* =====================================================
-   WEB2 / IMÁGENES SOBREPUestAS EN MEJOR CALIDAD
-   ===================================================== */
-
-.web2-overlay{
-  position:absolute;
-  z-index:2;
-  display:block;
-  height:auto;
-  pointer-events:none;
-  user-select:none;
-  -webkit-user-drag:none;
-}
-
-/* 1. Imagen de las 5 etapas */
-.web2-overlay-etapas{
-  left:7.1%;
-  top:8.55%;
-  width:85.8%;
-}
-
-/* 2. Etapa 5: ¿Qué significa? */
-.web2-overlay-etapa5{
-  left:31.2%;
-  top:37.35%;
-  width:51.8%;
-}
-
-/* 3. Hemodiálisis vs diálisis peritoneal */
-.web2-overlay-hvp{
-  left:30.8%;
-  top:60.9%;
-  width:58.6%;
-}
-
-/* 4. Cómo aprovechar el tiempo durante la diálisis */
-.web2-overlay-tiempo{
-  left:18.9%;
-  top:76.15%;
-  width:68.8%;
-}
 
 /* =====================================================
    WEB3 / VIDEO
