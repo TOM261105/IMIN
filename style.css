@@ -285,13 +285,38 @@ body{
 
   color:#ffffff;
   font-family:'RalewayIMIN', Arial, Helvetica, sans-serif;
-  font-size:clamp(7px, .58vw, 12px);
-  font-weight:800;
+  font-weight:500;
   line-height:1;
   text-align:center;
   text-transform:uppercase;
-  letter-spacing:-.15px;
+  letter-spacing:.2px;
   z-index:10;
+}
+
+/* Tamaño igual al menú original para botones cortos */
+.nav-4:hover .sr-only,
+.nav-5:hover .sr-only,
+.nav-6:hover .sr-only,
+.nav-7:hover .sr-only,
+.nav-4:focus-visible .sr-only,
+.nav-5:focus-visible .sr-only,
+.nav-6:focus-visible .sr-only,
+.nav-7:focus-visible .sr-only{
+  font-size:clamp(13px, .95vw, 19px);
+  font-weight:500;
+  letter-spacing:.2px;
+}
+
+/* Tamaño ajustado para botones largos */
+.nav-1:hover .sr-only,
+.nav-2:hover .sr-only,
+.nav-3:hover .sr-only,
+.nav-1:focus-visible .sr-only,
+.nav-2:focus-visible .sr-only,
+.nav-3:focus-visible .sr-only{
+  font-size:clamp(11px, .78vw, 16px);
+  font-weight:500;
+  letter-spacing:.1px;
 }
 
 /* Botón activo según la página: se queda encendido */
@@ -332,13 +357,31 @@ body{
 
   color:#ffffff;
   font-family:'RalewayIMIN', Arial, Helvetica, sans-serif;
-  font-size:clamp(7px, .58vw, 12px);
-  font-weight:800;
+  font-weight:500;
   line-height:1;
   text-align:center;
   text-transform:uppercase;
-  letter-spacing:-.15px;
+  letter-spacing:.2px;
   z-index:10;
+}
+
+/* Tamaño activo para botones cortos */
+.page-web1 .nav-7 .sr-only,
+.page-web5 .nav-4 .sr-only,
+.page-web6 .nav-5 .sr-only,
+.page-web7 .nav-6 .sr-only{
+  font-size:clamp(13px, .95vw, 19px);
+  font-weight:500;
+  letter-spacing:.2px;
+}
+
+/* Tamaño activo para botones largos */
+.page-web2 .nav-1 .sr-only,
+.page-web3 .nav-2 .sr-only,
+.page-web4 .nav-3 .sr-only{
+  font-size:clamp(11px, .78vw, 16px);
+  font-weight:500;
+  letter-spacing:.1px;
 }
 
 /* El activo se mantiene igual al pasar el cursor */
@@ -369,36 +412,7 @@ body{
 
 /* Brillo suave al pasar el cursor */
 .nav-hotspot::after{
-  background:linear-gradient(120deg, transparent, rgba(255,255,255,.22), transparent);
-}
-
-/* Ajuste para textos largos */
-.nav-1:hover .sr-only,
-.nav-2:hover .sr-only,
-.nav-3:hover .sr-only,
-.nav-1:focus-visible .sr-only,
-.nav-2:focus-visible .sr-only,
-.nav-3:focus-visible .sr-only,
-.page-web2 .nav-1 .sr-only,
-.page-web3 .nav-2 .sr-only,
-.page-web4 .nav-3 .sr-only{
-  font-size:clamp(6.5px, .54vw, 11px);
-  letter-spacing:-.25px;
-}
-
-.nav-4:hover .sr-only,
-.nav-5:hover .sr-only,
-.nav-6:hover .sr-only,
-.nav-7:hover .sr-only,
-.nav-4:focus-visible .sr-only,
-.nav-5:focus-visible .sr-only,
-.nav-6:focus-visible .sr-only,
-.nav-7:focus-visible .sr-only,
-.page-web5 .nav-4 .sr-only,
-.page-web6 .nav-5 .sr-only,
-.page-web7 .nav-6 .sr-only,
-.page-web1 .nav-7 .sr-only{
-  font-size:clamp(7px, .58vw, 12px);
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,.18), transparent);
 }
 
 /* =====================================================
