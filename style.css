@@ -545,32 +545,32 @@ body{
   -webkit-user-drag:none;
 }
 
-/* Imagen de las 5 etapas */
+/* 1. Imagen de las 5 etapas */
 .web2-overlay-etapas{
-  left:3.6%;
-  top:8.7%;
-  width:92.8%;
+  left:6.2%;
+  top:8.5%;
+  width:87.6%;
 }
 
-/* Imagen etapa 5 / síntomas / diálisis */
+/* 2. Etapa 5: ¿Qué significa? */
 .web2-overlay-etapa5{
-  left:4.2%;
-  top:27.8%;
-  width:91.6%;
+  left:30.6%;
+  top:31.1%;
+  width:54.8%;
 }
 
-/* Hemodiálisis vs diálisis peritoneal */
+/* 3. Hemodiálisis vs diálisis peritoneal */
 .web2-overlay-hvp{
-  left:8.5%;
-  top:48.2%;
-  width:83%;
+  left:29.4%;
+  top:50.6%;
+  width:61.8%;
 }
 
-/* Cómo aprovechar el tiempo durante la diálisis */
+/* 4. Cómo aprovechar el tiempo durante la diálisis */
 .web2-overlay-tiempo{
-  left:5.2%;
-  top:72.2%;
-  width:89.6%;
+  left:15.8%;
+  top:68.9%;
+  width:74.5%;
 }
 
 /* =====================================================
