@@ -532,7 +532,7 @@ body{
 }
 
 /* =====================================================
-   WEB2 / IMÁGENES SOBREPUestas EN MEJOR CALIDAD
+   WEB2 / IMÁGENES SOBREPUestAS EN MEJOR CALIDAD
    ===================================================== */
 
 .web2-overlay{
@@ -545,32 +545,32 @@ body{
   -webkit-user-drag:none;
 }
 
-/* Etapas de la ERC */
+/* Imagen de las 5 etapas */
 .web2-overlay-etapas{
-  left:0%;
-  top:8.8%;
-  width:100%;
+  left:3.6%;
+  top:8.7%;
+  width:92.8%;
 }
 
-/* Etapa 5: ¿Qué significa? */
+/* Imagen etapa 5 / síntomas / diálisis */
 .web2-overlay-etapa5{
-  left:1.9%;
-  top:28.4%;
-  width:96.2%;
+  left:4.2%;
+  top:27.8%;
+  width:91.6%;
 }
 
 /* Hemodiálisis vs diálisis peritoneal */
 .web2-overlay-hvp{
-  left:7.3%;
-  top:49.8%;
-  width:85.4%;
+  left:8.5%;
+  top:48.2%;
+  width:83%;
 }
 
 /* Cómo aprovechar el tiempo durante la diálisis */
 .web2-overlay-tiempo{
-  left:0%;
-  top:73.2%;
-  width:100%;
+  left:5.2%;
+  top:72.2%;
+  width:89.6%;
 }
 
 /* =====================================================
