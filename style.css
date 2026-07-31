@@ -309,14 +309,19 @@ body{
 
 /* Tamaño ajustado para botones largos */
 .nav-1:hover .sr-only,
-.nav-2:hover .sr-only,
-.nav-3:hover .sr-only,
-.nav-1:focus-visible .sr-only,
-.nav-2:focus-visible .sr-only,
-.nav-3:focus-visible .sr-only{
-  font-size:clamp(11px, .78vw, 16px);
+.nav-1:focus-visible .sr-only{
+  font-size:clamp(13px, .95vw, 19px);
   font-weight:500;
-  letter-spacing:.1px;
+  letter-spacing:.15px;
+}
+
+.nav-2:hover .sr-only,
+.nav-2:focus-visible .sr-only,
+.nav-3:hover .sr-only,
+.nav-3:focus-visible .sr-only{
+  font-size:clamp(12px, .88vw, 18px);
+  font-weight:500;
+  letter-spacing:.05px;
 }
 
 /* Botón activo según la página: se queda encendido */
@@ -376,12 +381,17 @@ body{
 }
 
 /* Tamaño activo para botones largos */
-.page-web2 .nav-1 .sr-only,
+.page-web2 .nav-1 .sr-only{
+  font-size:clamp(13px, .95vw, 19px);
+  font-weight:500;
+  letter-spacing:.15px;
+}
+
 .page-web3 .nav-2 .sr-only,
 .page-web4 .nav-3 .sr-only{
-  font-size:clamp(11px, .78vw, 16px);
+  font-size:clamp(12px, .88vw, 18px);
   font-weight:500;
-  letter-spacing:.1px;
+  letter-spacing:.05px;
 }
 
 /* El activo se mantiene igual al pasar el cursor */
