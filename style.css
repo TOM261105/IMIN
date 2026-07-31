@@ -176,18 +176,17 @@ body{
   top:0.80%;
   border-radius:18px 18px 0 0;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background:#ffffff;
+  background:transparent;
   box-shadow:none;
   backdrop-filter:none;
   overflow:hidden;
 
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
   transition:
     background .25s ease,
-    color .25s ease,
     box-shadow .25s ease,
     transform .25s ease;
 }
@@ -209,7 +208,7 @@ body{
   height:1.07%;
 }
 
-/* Posiciones horizontales ajustadas */
+/* Posiciones horizontales */
 .nav-1{
   left:0.4%;
   width:17.2%;
@@ -245,8 +244,33 @@ body{
   width:8.3%;
 }
 
-/* Texto visible SIEMPRE en menú */
+/* Texto oculto normalmente */
 .nav-hotspot .sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+/* Hover del menú: transparente → invertido */
+.nav-hotspot:hover,
+.nav-hotspot:focus-visible{
+  background:#ffffff;
+  box-shadow:
+    0 0 0 1px rgba(22,47,98,.18),
+    0 8px 18px rgba(0,0,0,.18);
+  transform:none;
+  backdrop-filter:none;
+}
+
+/* Texto visible solo en hover */
+.nav-hotspot:hover .sr-only,
+.nav-hotspot:focus-visible .sr-only{
   position:absolute;
   width:auto;
   height:auto;
@@ -272,24 +296,7 @@ body{
   z-index:10;
 }
 
-/* Hover del menú: colores invertidos */
-.nav-hotspot:hover,
-.nav-hotspot:focus-visible{
-  background:#162f62;
-  box-shadow:
-    0 6px 16px rgba(0,0,0,.18),
-    inset 0 0 0 1px rgba(255,255,255,.20);
-  transform:none;
-  backdrop-filter:none;
-  overflow:hidden;
-}
-
-.nav-hotspot:hover .sr-only,
-.nav-hotspot:focus-visible .sr-only{
-  color:#ffffff;
-}
-
-/* Botón activo según la página */
+/* Botón activo: también transparente para que se vea el diseño original */
 .page-web1 .nav-7,
 .page-web2 .nav-1,
 .page-web3 .nav-2,
@@ -297,12 +304,12 @@ body{
 .page-web5 .nav-4,
 .page-web6 .nav-5,
 .page-web7 .nav-6{
-  background:#162f62;
+  background:transparent;
   box-shadow:none;
   backdrop-filter:none;
-  overflow:hidden;
 }
 
+/* En el botón activo el texto sigue oculto hasta hover */
 .page-web1 .nav-7 .sr-only,
 .page-web2 .nav-1 .sr-only,
 .page-web3 .nav-2 .sr-only,
@@ -310,10 +317,18 @@ body{
 .page-web5 .nav-4 .sr-only,
 .page-web6 .nav-5 .sr-only,
 .page-web7 .nav-6 .sr-only{
-  color:#ffffff;
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
 }
 
-/* Cuando pasas sobre el activo, se mantiene igual */
+/* Hover del botón activo: igual invertido */
 .page-web1 .nav-7:hover,
 .page-web2 .nav-1:hover,
 .page-web3 .nav-2:hover,
@@ -321,7 +336,10 @@ body{
 .page-web5 .nav-4:hover,
 .page-web6 .nav-5:hover,
 .page-web7 .nav-6:hover{
-  background:#162f62;
+  background:#ffffff;
+  box-shadow:
+    0 0 0 1px rgba(22,47,98,.18),
+    0 8px 18px rgba(0,0,0,.18);
 }
 
 .page-web1 .nav-7:hover .sr-only,
@@ -331,34 +349,80 @@ body{
 .page-web5 .nav-4:hover .sr-only,
 .page-web6 .nav-5:hover .sr-only,
 .page-web7 .nav-6:hover .sr-only{
-  color:#ffffff;
+  position:absolute;
+  width:auto;
+  height:auto;
+  clip:auto;
+  margin:0;
+  padding:0 6px;
+  overflow:visible;
+  white-space:nowrap;
+  border:0;
+
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+
+  color:#162f62;
+  font-family:'RalewayIMIN', Arial, Helvetica, sans-serif;
+  font-size:clamp(7px, .58vw, 12px);
+  font-weight:800;
+  line-height:1;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:-.15px;
+  z-index:10;
 }
 
-/* Quita borde/línea extra del menú */
+/* Quita borde/línea extra */
 .nav-hotspot::before{
   border:none;
-  border-radius:18px 18px 0 0;
-  transform:none;
+  opacity:0;
 }
 
-/* Brillo suave al pasar el cursor en menú */
+/* Brillo sutil blanco/azul */
 .nav-hotspot::after{
-  background:linear-gradient(120deg, transparent, rgba(255,255,255,.22), transparent);
+  background:linear-gradient(120deg, transparent, rgba(22,47,98,.16), transparent);
 }
 
 /* Ajuste para textos largos */
-.nav-1 .sr-only,
-.nav-2 .sr-only,
-.nav-3 .sr-only{
+.nav-1:hover .sr-only,
+.nav-2:hover .sr-only,
+.nav-3:hover .sr-only,
+.nav-1:focus-visible .sr-only,
+.nav-2:focus-visible .sr-only,
+.nav-3:focus-visible .sr-only{
   font-size:clamp(6.5px, .54vw, 11px);
   letter-spacing:-.25px;
 }
 
-.nav-4 .sr-only,
-.nav-5 .sr-only,
-.nav-6 .sr-only,
-.nav-7 .sr-only{
+.nav-4:hover .sr-only,
+.nav-5:hover .sr-only,
+.nav-6:hover .sr-only,
+.nav-7:hover .sr-only,
+.nav-4:focus-visible .sr-only,
+.nav-5:focus-visible .sr-only,
+.nav-6:focus-visible .sr-only,
+.nav-7:focus-visible .sr-only{
   font-size:clamp(7px, .58vw, 12px);
+}
+
+/* Responsive menú */
+@media(max-width:700px){
+  .nav-hotspot::after{
+    display:none;
+  }
+
+  .nav-hotspot:hover,
+  .nav-hotspot:focus-visible{
+    background:transparent;
+    box-shadow:none;
+  }
+
+  .nav-hotspot:hover .sr-only,
+  .nav-hotspot:focus-visible .sr-only{
+    display:none;
+  }
 }
 
 /* =====================================================
